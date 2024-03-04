@@ -56,4 +56,33 @@
     </form>
 
 </body>
+<script src="user.js"></script>
+<script src="window.js"></script>
+<script src="os.js"></script>
+<script src="main.js"></script>
+<script src="index.js"></script>
+<script src="users.js"></script>
+<script src="gamestate.js"></script>
+<script src="gameloop.js"></script>
+<script src="cycles.js"></script>
+<script src="observation.js"></script>
+<script src="movement.js"></script>
+<script src="objects.js"></script>
+<script src="social.js"></script>
+<script src="BugTracking.js"></script>
+<script src="auth.js"></script>
+<script src="error.js"></script>
+<script src="support.js"></script>
+<script>
+    function performLogin() {
+        // Add authentication logic (use your existing auth.js or implement it here)
+        if (authenticateUser()) {
+            // Redirect to character.html on successful login
+            window.location.href = "file:///C:/Users/alekr/OneDrive/Desktop/psychosis/character.html";
+        } else {
+            // Handle unsuccessful login (display an error message, etc.)
+            alert("Invalid credentials. Please try again.");
+        }
+    }
+</script>
 </html>
