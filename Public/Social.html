@@ -1,48 +1,242 @@
-<--- file=robjam1990/psychosis/gameplay/planets/thear/social.html --->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Hub - Psychosis</title>
-    <!-- Add any additional meta tags or links to external stylesheets here -->
+    <title>Social</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-y: scroll;
+            background-color: #f0f0f0;
+            margin: 0;
+            height: 100%;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1,
+        h2 {
+            margin: 10px 0;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Adjust button styles */
+        section button {
+            display: block;
+            margin: 10px auto;
+            /* Center the buttons and add space between them */
+            padding: 15px 20px;
+            /* Increase button size */
+            font-size: 18px;
+            /* Increase font size */
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
 </head>
+
 <body>
 
     <header>
-        <h1>Social Hub - Thear</h1>
+        <h1>Social Hub</h1>
         <p>Connect with the denizens of Thear in this social space.</p>
     </header>
 
+    <section>
+        <button id="character-button">Character</button>
+        <button id="converse-button">Converse</button>
+        <button id="friends-button">Friends</button>
+        <button id="enemies-button">Enemies</button>
+    </section>
+
     <section id="local-events">
         <h2>Local Events</h2>
-        <p>Stay updated on the latest events in Nexus. Attend festivals, tournaments, and gatherings. Participate to earn rewards and reputation among the townsfolk.</p>
-        <!-- Include details about ongoing events and how players can engage -->
+        <p>Stay updated on the latest events in Nexus. Attend festivals, tournaments, and gatherings. Participate to
+            earn rewards and reputation among the townsfolk.</p>
+        <!-- Display clickable local events -->
     </section>
 
     <section id="tavern-interactions">
         <h2>Tavern Interactions</h2>
-        <p>Visit the tavern to engage in conversations, challenge NPCs to games, or gather information. The tavern is a hotspot for social interactions and valuable insights.</p>
-        <!-- Include details about NPCs in the tavern and their interactions -->
+        <p>Visit the tavern to engage in conversations, challenge NPCs to games, or gather information. The tavern is a
+            hotspot for social interactions and valuable insights.</p>
+        <!-- Display clickable tavern interactions -->
     </section>
 
     <section id="guilds">
         <h2>Guilds and Factions</h2>
-        <p>Discover various guilds and factions in Nexus. Choose to align with a faction, undertake faction-specific quests, and unlock unique benefits. Your allegiances may influence the course of your adventure.</p>
-        <!-- Provide information about available guilds and their purposes -->
+        <p>Discover various guilds and factions in Nexus. Choose to align with a faction, undertake faction-specific
+            quests, and unlock unique benefits. Your allegiances may influence the course of your adventure.</p>
+        <!-- Display clickable public factions -->
     </section>
 
     <section id="player-interactions">
         <h2>Player Interactions</h2>
-        <p>Connect with other players in the world of Psychosis. Form parties, trade items, or engage in friendly duels. Collaborate to overcome challenges and share the excitement of your journey.</p>
-        <!-- Include details about multiplayer aspects and how players can interact with each other -->
+        <p>Connect with other players in the world of Psychosis. Form parties, trade items, or engage in friendly duels.
+            Collaborate to overcome challenges and share the excitement of your journey.</p>
+        <!-- Display clickable social interactions -->
     </section>
 
     <footer>
         <p>Forge alliances, build relationships, and shape the social fabric of Thear!</p>
     </footer>
 
-    <!-- Add any necessary scripts or links to external scripts here -->
+    <script src="user.js"></script>
+    <script src="window.js"></script>
+    <script src="os.js"></script>
+    <script src="main.js"></script>
+    <script src="index.js"></script>
+    <script src="users.js"></script>
+    <script src="gamestate.js"></script>
+    <script src="gameloop.js"></script>
+    <script src="cycles.js"></script>
+    <script src="observation.js"></script>
+    <script src="movement.js"></script>
+    <script src="objects.js"></script>
+    <script src="social.js"></script>
+    <script src="fear.js"></script>
+    <script src="respect.js"></script>
+    <script src="disease.js"></script>
+    <script src="morality.js"></script>
+    <script src="loyalty.js"></script>
+    <script src="sanity.js"></script>
+    <script src="character.js"></script>
+    <script src="NPC.js"></script>
+    <script src="NPC_NN.js"></script>
+    <script src="nexus.js"></script>
+    <script src="thear.js"></script>
+    <script>
+        class Character {
+            constructor(name) {
+                this.name = name;
+                this.friends = [];
+                this.enemies = [];
+            }
 
+            addFriend(friend) {
+                this.friends.push(friend);
+            }
+
+            addEnemy(enemy) {
+                this.enemies.push(enemy);
+            }
+
+            getFriends() {
+                return this.friends;
+            }
+
+            getEnemies() {
+                return this.enemies;
+            }
+        }
+
+        function populateTavernInteractions() {
+            const tavernInteractionsSection = document.getElementById("tavern-interactions");
+            // Fetch available tavern interactions (e.g., conversations, games) from the game world
+
+            // Replace this with actual data
+            const availableInteractions = [
+                "Engage in Conversation",
+                "Challenge NPCs to Games",
+                "Gather Information"
+            ];
+
+            // Clear previous content
+            tavernInteractionsSection.innerHTML = "";
+
+            // Display each interaction as clickable buttons
+            availableInteractions.forEach(interaction => {
+                const interactionButton = document.createElement("button");
+                interactionButton.textContent = interaction;
+                interactionButton.classList.add("interaction-button");
+                tavernInteractionsSection.appendChild(interactionButton);
+            });
+        }
+
+        // Call the function to populate tavern interactions on page load
+        populateTavernInteractions();
+
+
+        function populateLocalEvents() {
+            const localEventsSection = document.getElementById("local-events");
+            // Fetch upcoming events from the game world (this could be replaced with actual data)
+            const upcomingEvents = ["Festival of Nexus", "Tournament of Champions", "Gathering of Adventurers"];
+
+            // Clear previous content
+            localEventsSection.innerHTML = "";
+
+            // Display each event as clickable links
+            upcomingEvents.forEach(event => {
+                const eventLink = document.createElement("a");
+                eventLink.textContent = event;
+                eventLink.href = "#"; // Replace with actual event page link
+                eventLink.classList.add("event-link");
+                localEventsSection.appendChild(eventLink);
+                localEventsSection.appendChild(document.createElement("br"));
+            });
+        }
+
+        // Call the function to populate local events on page load
+        populateLocalEvents();
+
+        function handlePlayerInteractions() {
+            // Implement functionality to handle player interactions
+            // For example, forming parties, trading items, engaging in duels
+            // This could involve opening modal dialogs or initiating specific game actions
+        }
+
+        // Add event listener to player interactions section
+        const playerInteractionsSection = document.getElementById("player-interactions");
+        playerInteractionsSection.addEventListener("click", handlePlayerInteractions);
+
+
+        // index.js
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialize UI elements
+            const characterButton = document.querySelector("#character-button");
+            const converseButton = document.querySelector("#converse-button");
+            const friendsButton = document.querySelector("#friends-button");
+            const enemiesButton = document.querySelector("#enemies-button");
+
+            // Add event listeners
+            characterButton.addEventListener("click", () => {
+                window.location.href = "Character.html";
+            });
+
+            converseButton.addEventListener("click", startConversation);
+            friendsButton.addEventListener("click", () => {
+                const friendsList = currentUser.getFriends();
+                // Display friends list
+            });
+            enemiesButton.addEventListener("click", () => {
+                const enemiesList = currentUser.getEnemies();
+                // Display enemies list
+            });
+        });
+    </script>
 </body>
+
 </html>
