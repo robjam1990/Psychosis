@@ -1,0 +1,117 @@
+//This is a Character sheet which displays a single character.
+
+character.membership
+
+{
+character.information
+{
+'Name': 
+First Name:
+Robert,
+Middle Names:
+James,
+Last Names:
+Newell Landry,
+Username:
+robjam1990, 
+
+'Hair Colour': 
+Primary:
+Brown,
+Secondary:
+Black,
+Remaining:
+Silver, 
+
+'Eye Colour': 
+Green, 
+
+'Skin Colour': 
+Dominant:
+White,
+Remaining:
+Pink, 
+
+'Weight/Mass': 
+70 kg, 
+
+'Height/Length': 
+169 cm, 
+
+'Date of Birth/Creation': 
+Conception:
+03/27/1990,
+Reception:
+1/1/1, 
+
+'Gender/Sex': 
+Given:
+Male,
+Desired:
+Male,
+}
+character.attributes
+{
+//The ability to move mass in large volumes.
+'Strength/Power': 
+62,
+//The ability to move for increased amount of time.
+'Endurance/Stamina': 
+59,
+//The ability to move mass quickly.
+'Speed/Agility': 
+67,
+//The amount of Neurons required for processing.
+'Perception/Recognition': 
+89,
+//The amount of Neurons available for processing.
+'Intelligence/Logistics': 
+86,
+//The amount of Neurons stored.
+'Knowledge/Memory': 
+91,
+//The control of quality of neurons stored.
+'Experience/Wisdom': 
+94,
+//The morale despite long odds.
+'Will/Determination': 
+82,
+//The ability to safely wait for an extended period of time.
+'Patience/Poise': 
+64,
+//The physical preference to bend instead of break.
+'Flexibility/Elasticity': 
+61,
+}
+
+character.traits
+
+{
+Curious,
+Creative,
+Defensive,
+Calculated,
+Polite,
+}
+
+character.skills
+
+{
+Combat,
+Games,
+Psychology,
+Learning,
+Teaching,
+Adaptation,
+Tactics,
+}
+
+character.titles
+
+{
+Judge,
+General,
+Adventurer,
+Scholar,
+}
+}

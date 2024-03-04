@@ -1,0 +1,74 @@
+nexus.character = {
+    'character.information': {
+        'Name': {
+            'First Name': 'M',
+            'Middle Names': 'I',
+            'Last Names': 'A'
+        },
+        'Username': 'Mia',
+        'Hair Colour': {
+            'Primary': 'Brown',
+            'Secondary': 'Black',
+            'Remaining': 'Hazel'
+        },
+        'Eye Colour': 'Brown',
+        'Skin Colour': {
+            'Dominant': 'White',
+            'Remaining': 'Pink'
+        },
+        'Weight/Mass': '67 kg',
+        'Height/Length': '161 cm',
+        'Date of Birth/Creation': {
+            'Conception': 'n/n/n',
+            'Reception': '1/1/1'
+        },
+        'Gender/Sex': {
+            'Given': 'Female',
+            'Desired': 'Unknown'
+        }
+    },
+    'character.attributes': {
+        'Strength/Power': 60,
+        'Endurance/Stamina': 75,
+        'Speed/Agility': 80,
+        'Perception/Recognition': 80,
+        'Intelligence/Logistics': 80,
+        'Knowledge/Memory': 90,
+        'Experience/Wisdom': 60,
+        'Will/Determination': 79,
+        'Patience/Poise': 99,
+        'Flexibility/Elasticity': 90
+    },
+    'character.traits': [
+        'Curious',
+        'Creative',
+        'Dependent',
+        'Defensive',
+        'Passive',
+        'Progressive',
+        'Benevolent',
+        'Beautiful',
+        'Spontaneous',
+        'Polite',
+        'Concentrated',
+        'Gentle',
+        'Smart',
+        'Silly',
+        'Loyal',
+        'Energetic',
+        'Honest'
+    ],
+    'character.skills': [
+        'Engineering',
+        'Linguistics',
+        'Psychology',
+        'Medical',
+        'Virtuous',
+        'Negotiate'
+    ],
+    'character.titles': [
+        'Doctor',
+        'Scientist',
+        'Artist'
+    ]
+}
