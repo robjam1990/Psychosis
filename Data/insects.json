@@ -1,0 +1,84 @@
+{
+    "insects": [
+        {
+            "name": "Bee",
+            "behavior": "Docile unless provoked. Can be domesticated for honey production.",
+            "ecologicalImpact": "Important pollinators for flowers and crops.",
+            "abilities": [
+                "Stinging defense",
+                "Pollination"
+            ]
+        },
+        {
+            "name": "Fly",
+            "behavior": "Often found near decaying matter. Can be captured for bait or study.",
+            "ecologicalImpact": "May spread diseases if not properly managed.",
+            "abilities": [
+                "Flight"
+            ]
+        },
+        {
+            "name": "Beetle",
+            "behavior": "Varied behaviors depending on species. Some are territorial or predatory.",
+            "ecologicalImpact": "Can affect plant health and ecosystem balance.",
+            "abilities": [
+                "Hard exoskeleton",
+                "Various feeding habits"
+            ]
+        },
+        {
+            "name": "Ant",
+            "behavior": "Highly social insects with complex behaviors. Can be studied or controlled.",
+            "ecologicalImpact": "Important for soil aeration and nutrient cycling.",
+            "abilities": [
+                "Strength in numbers",
+                "Teamwork"
+            ]
+        },
+        {
+            "name": "Wasp",
+            "behavior": "Aggressive if disturbed. Can be captured for study or used as biological control agents.",
+            "ecologicalImpact": "Predators of other insects. Can also pollinate flowers.",
+            "abilities": [
+                "Stinging defense",
+                "Predatory behavior"
+            ]
+        },
+        {
+            "name": "Mosquito"
+        },
+        {
+            "name": "Butterfly"
+        },
+        {
+            "name": "Dragonfly"
+        },
+        {
+            "name": "Firefly"
+        },
+        {
+            "name": "Praying Mantis"
+        },
+        {
+            "name": "Ladybug"
+        },
+        {
+            "name": "Worm"
+        },
+        {
+            "name": "Centipede"
+        },
+        {
+            "name": "Millipede"
+        },
+        {
+            "name": "Pill Bug"
+        },
+        {
+            "name": "Termite"
+        },
+        {
+            "name": "Moth"
+        }
+    ]
+}
