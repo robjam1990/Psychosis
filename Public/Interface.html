@@ -1,0 +1,123 @@
+<--- File = robjam1990/Psychosis/Interface.html --->
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Psychosis</title>
+        <style>
+            /* Your CSS styles here */
+        </style>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div id="game-interface">
+            <div id="conversationContainer">
+                <div id="conversationHistory"></div>
+            </div>
+            <input type="text" id="messageEntry">
+            <button onclick="sendMessage()">Send</button>
+
+            <div id="dialogue">
+                <p id="speaker"></p>
+                <p id="message"></p>
+                <div id="choices"></div>
+            </div>
+
+            <div id="user-interface">
+                <ul>
+                    <li><a href="#" id="taverne-link">Taverne</a></li>
+                    <li><a href="#" id="character-link">Character</a></li>
+                    <li><a href="#" id="map-link">Map</a></li>
+                    <li><a href="#" id="inventory-link">Inventory</a></li>
+                    <li><a href="#" id="stats-link">Stats</a></li>
+                    <li><a href="#" id="quests-link">Quests</a></li>
+                    <li><a href="#" id="relations-link">Relations</a></li>
+                    <li><a href="#" id="faction-link">Faction</a></li>
+                    <li><a href="#" id="glossary-link">Glossary</a></li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            // Define variables to store references to DOM elements
+const conversationHistory = document.getElementById("conversationHistory");
+const messageEntry = document.getElementById("messageEntry");
+const dialogue = document.getElementById("dialogue");
+const speaker = document.getElementById("speaker");
+const message = document.getElementById("message");
+const choices = document.getElementById("choices");
+
+// Function to send a message
+function sendMessage() {
+    // Get the user input message
+    const userMessage = messageEntry.value;
+    // Append the message to the conversation history
+    conversationHistory.innerHTML += `<p>User: ${userMessage}</p>`;
+    // Clear the message entry field
+    messageEntry.value = "";
+    // Process the user message (You'll define this function later)
+    processUserMessage(userMessage);
+}
+
+// Function to display a message in the dialogue box
+function displayMessage(speakerText, messageText, choicesArray) {
+    // Update the speaker and message elements
+    speaker.textContent = speakerText;
+    message.textContent = messageText;
+
+    // Clear any previous choices
+    choices.innerHTML = "";
+
+    // If choices are provided, display them
+    if (choicesArray) {
+        choicesArray.forEach((choice, index) => {
+            // Create a button for each choice
+            const button = document.createElement("button");
+            button.textContent = choice;
+            // Add an event listener to handle choice selection
+            button.addEventListener("click", () => handleChoice(index));
+            // Append the button to the choices container
+            choices.appendChild(button);
+        });
+    }
+}
+
+// Function to handle user choice selection
+function handleChoice(choiceIndex) {
+    // Process the user's choice (You'll define this function later)
+    processUserChoice(choiceIndex);
+}
+
+// Function to process user messages
+function processUserMessage(userMessage) {
+    // Placeholder function - you'll implement this later
+    // This function should interpret the user's message and generate a response
+    // It may involve updating the game state and displaying messages or choices
+}
+
+// Function to process user choices
+function processUserChoice(choiceIndex) {
+    // Placeholder function - you'll implement this later
+    // This function should handle the user's choice and update the game state accordingly
+    // It may involve triggering specific actions or events in the game
+}
+
+// Example usage:
+// displayMessage("NPC", "Welcome to the Taverne! What can I do for you?", ["Order a drink", "Ask about quests"]);
+
+        </script>
+        <footer>
+            <ul>
+                <li><a href="#" id="inventory-link">Inventory</a></li>
+                <li><a href="#" id="stats-link">Stats</a></li>
+                <li><a href="#" id="quests-link">Quests</a></li>
+                <li><a href="#" id="relations-link">Relations</a></li>
+                <li><a href="#" id="faction-link">Faction</a></li>
+                <li><a href="#" id="glossary-link">Glossary</a></li>
+            </ul>
+        </footer>
+    </body>
+
+    </html>

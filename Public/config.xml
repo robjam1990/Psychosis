@@ -1,0 +1,122 @@
+<--- File = robjam1990/Psychosis/Config/config.xml --->
+<configuration>
+<!-- Use environment variables or command-line arguments to specify library locations for flexibility and easier maintenance -->
+
+<!-- Cygwin compatibility on non-Windows platforms -->
+<dllmap dll="i:cygwin1.dll" target="libc.dylib" os="!windows">
+    <!-- Cygwin compatibility mapping -->
+</dllmap>
+
+<!-- Map libc library on non-Windows platforms to libc.dylib -->
+<dllmap dll="libc" target="libc.dylib" os="!windows">
+    <!-- libc mapping -->
+</dllmap>
+
+<!-- Map intl library on non-Windows platforms to libintl.dylib -->
+<dllmap dll="intl" target="libintl.dylib" os="!windows" />
+<dllmap dll="intl" name="bind_textdomain_codeset" target="libc.dylib" os="solaris" />
+<dllmap dll="libintl" name="bind_textdomain_codeset" target="libc.dylib" os="solaris" />
+<dllmap dll="libintl" target="libintl.dylib" os="!windows" />
+
+<!-- Map libxslt library on non-Windows platforms to libxslt.dylib -->
+<dllmap dll="i:libxslt.dll" target="libxslt.dylib" os="!windows">
+    <!-- libxslt mapping -->
+</dllmap>
+
+<!-- Map odbc32.dll library on non-Windows platforms to libodbc.dylib -->
+<dllmap dll="i:odbc32.dll" target="libodbc.dylib" os="!windows">
+    <!-- odbc32 mapping -->
+</dllmap>
+
+<!-- Map odbc32.dll library on macOS to libiodbc.dylib -->
+<dllmap dll="i:odbc32.dll" target="libiodbc.dylib" os="osx">
+    <!-- odbc32 mapping for macOS -->
+</dllmap>
+
+<!-- Map oci library on non-Windows platforms to libclntsh.dylib -->
+<dllmap dll="oci" target="libclntsh.dylib" os="!windows">
+    <!-- oci mapping -->
+</dllmap>
+
+<!-- Map kernel32.dll functions to internal functions -->
+<dllmap dll="i:kernel32.dll">
+    <dllentry dll="__Internal" name="CopyMemory" target="mono_win32_compat_CopyMemory" />
+    <dllentry dll="__Internal" name="FillMemory" target="mono_win32_compat_FillMemory" />
+    <dllentry dll="__Internal" name="MoveMemory" target="mono_win32_compat_MoveMemory" />
+    <dllentry dll="__Internal" name="ZeroMemory" target="mono_win32_compat_ZeroMemory" />
+</dllmap>
+
+<!-- Map gdiplus.dll functions to libgdiplus.dylib -->
+<dllmap dll="gdiplus" target="/Users/bokken/build/output/Unity-Technologies/mono/external/buildscripts/add_to_build_results/monodistribution/lib/libgdiplus.dylib" os="!windows" />
+<dllmap dll="gdiplus.dll" target="/Users/bokken/build/output/Unity-Technologies/mono/external/buildscripts/add_to_build_results/monodistribution/lib/libgdiplus.dylib" os="!windows" />
+<dllmap dll="gdi32" target="/Users/bokken/build/output/Unity-Technologies/mono/external/buildscripts/add_to_build_results/monodistribution/lib/libgdiplus.dylib" os="!windows" />
+<dllmap dll="gdi32.dll" target="/Users/bokken/build/output/Unity-Technologies/mono/external/buildscripts/add_to_build_results/monodistribution/lib/libgdiplus.dylib" os="!windows" />
+<gameConfiguration>
+    <!-- Game Settings -->
+    <gameMechanics>
+        <limbRemovalSystem enabled="true" />
+        <tacticalCombat enabled="true" />
+        <ecosystemSimulation enabled="true">
+            <animalCommunication enabled="true" />
+        </ecosystemSimulation>
+        <nationBuilding enabled="true">
+            <logistics enabled="true" />
+            <agriculture enabled="true" />
+            <commerce enabled="true" />
+            <succession enabled="true" />
+        </nationBuilding>
+        <socialInfrastructure>
+            <bountySystem enabled="true" />
+            <hierarchies enabled="true" />
+        </socialInfrastructure>
+        <characterInteractions>
+            <loyalty enabled="true" />
+            <fear enabled="true" />
+            <respect enabled="true" />
+            <moralitySpectrum enabled="true">
+                <justiceSystem jurisdiction="true" />
+            </moralitySpectrum>
+        </characterInteractions>
+        <territoryExpansion enabled="true" />
+        <timeCycle enabled="true" />
+        <constructionSystem enabled="true" />
+        <prisonerManagement enabled="true" />
+        <namingSystem enabled="true" />
+        <hireSystem enabled="true" />
+        <delegationSystem enabled="true">
+            <militaryFormations enabled="true" />
+        </delegationSystem>
+        <supplyAndDemand enabled="true" />
+        <resourceSystem>
+            <renewable enabled="true" />
+            <nonRenewable enabled="true" />
+        </resourceSystem>
+        <craftingSystem enabled="true">
+            <metallurgy enabled="true" />
+        </craftingSystem>
+        <survivalSystem enabled="true">
+            <oxygen enabled="true" />
+            <temperature enabled="true" />
+            <disease enabled="true" />
+            <hunger enabled="true" />
+            <energy enabled="true" />
+            <sanity enabled="true" />
+            <hygiene enabled="true" />
+            <wasteManagement enabled="true" />
+        </survivalSystem>
+        <characterGrowth enabled="true" />
+        <learningSystem enabled="true">
+            <teaching enabled="true" />
+        </learningSystem>
+        <observationSystem enabled="true">
+            <empatheticLearning enabled="true" />
+        </observationSystem>
+        <characterCustomization>
+            <facialMapping enabled="true" />
+            <voiceSynthesizing enabled="true" />
+            <reproductionSystem enabled="true" />
+        </characterCustomization>
+        <geneticManipulation enabled="true" />
+    </gameMechanics>
+</gameConfiguration>
+</configuration>

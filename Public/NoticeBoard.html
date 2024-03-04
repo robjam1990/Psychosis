@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Psychosis: Tavern Notice Board</title>
+    <style>
+        /* Add CSS styles for visual enhancements */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #5e5232;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Add custom styles for quest details popup */
+        #questDetailsPopup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #5e5232;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 9999;
+        }
+
+        #questDetailsPopup h3 {
+            margin-top: 0;
+        }
+
+        #questDetailsPopup button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #questDetailsPopup button:hover {
+            background-color: #0056b3;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            opacity: 0.7;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="intro">
+            <h2>Welcome to Nexus Tavern</h2>
+            <p>Welcome, traveler, to Nexus Tavern. Here, amidst the chatter and clinking of tankards, adventurers like
+                yourself gather to rest and seek new challenges.</p>
+            <p>Behold the notice board, adorned with quests and tasks awaiting brave souls.</p>
+            <p>What shall be your next step?</p>
+            <ul>
+                <li><a href="#tasks">Peruse the notice board</a></li>
+                <li><a href="Taverne.html">Explore the tavern</a></li>
+            </ul>
+        </div>
+
+        <!-- Notice Board Section -->
+        <div id="tasks">
+            <h2>Notice Board</h2>
+            <p>You approach the notice board, its parchment filled with opportunities:</p>
+            <ul id="questList">
+                <!-- Quest items will be dynamically added here -->
+            </ul>
+            <p>Which task stirs your heart with excitement?</p>
+        </div>
+
+        <!-- Form to post new quests -->
+        <div id="postQuestForm">
+            <h2>Post a New Quest</h2>
+            <form id="questForm">
+                <label for="description">Description:</label><br>
+                <textarea id="description" name="description" rows="3" cols="50" required></textarea><br>
+                <label for="reward">Reward:</label><br>
+                <input type="text" id="reward" name="reward" required><br><br>
+                <button type="submit">Post Quest</button>
+            </form>
+        </div>
+
+        <!-- Link to Taverne Map -->
+        <a href="Map.js">Taverne Map</a>
+
+        <script>
+            // Function to dynamically generate random quests
+            function generateRandomQuest() {
+                // Sample quest descriptions and rewards
+                const quests = [
+                    { description: "Objective: Investigate reports of a haunted mansion on the outskirts of town. Exorcise the restless spirits and uncover the truth behind the curse.", reward: "Reward: Rare artifacts, gold" },
+                    { description: "Objective: Escort a group of scholars to an ancient ruin, where they seek to unearth forgotten knowledge and relics. Defend the scholars from hostile creatures and rival adventurers.", reward: "Reward: Ancient scrolls, knowledge points" },
+                    { description: "Objective: Explore the mysterious caverns beneath the tavern and retrieve a legendary artifact said to grant its bearer immense power. Beware of traps and guardians.", reward: "Reward: Legendary weapon, mystical powers" }
+                ];
+
+                // Randomly select a quest from the list
+                const randomQuest = quests[Math.floor(Math.random() * quests.length)];
+
+                return randomQuest;
+            }
+
+            // Function to add a new quest item to the list
+            function addQuestToList(questId, questDescription, questReward) {
+                const questList = document.getElementById("questList");
+
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `<a href="#" onclick="acceptQuest(${questId})">${questDescription}</a>`;
+                questList.appendChild(listItem);
+                saveQuestState(true); // Autosave when adding a new quest
+            }
+
+            // Function to accept a quest
+            function acceptQuest(questId) {
+                // Here you can implement the logic to handle the acceptance of the quest
+                alert(`You have accepted quest ${questId}!`);
+                completeQuest(questId); // Optionally mark the quest as completed
+            }
+
+            // Function to update quest completion status
+            function completeQuest(questId) {
+                const listItem = document.querySelector(`#questList li:nth-child(${questId})`);
+                listItem.classList.add("completed");
+                saveQuestState(true); // Autosave when completing a quest
+            }
+
+            // Function to handle form submission for posting new quests
+            document.getElementById("questForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+                const form = event.target;
+                const description = form.elements["description"].value;
+                const reward = form.elements["reward"].value;
+                // Add the new quest to the notice board
+                addQuestToList(document.querySelectorAll("#questList li").length + 1, description, reward);
+                form.reset(); // Clear the form fields after submission
+            });
+
+            // Function to save the state of quests to localStorage
+            function saveQuestState(auto) {
+                const questListItems = document.querySelectorAll("#questList li");
+                const questState = [];
+                questListItems.forEach((item, index) => {
+                    const quest = {
+                        id: index + 1,
+                        completed: item.classList.contains("completed")
+                    };
+                    questState.push(quest);
+                });
+                localStorage.setItem("questState", JSON.stringify(questState));
+            }
+
+            // Function to load the state of quests from localStorage
+            function loadQuestState(auto) {
+                const questState = JSON.parse(localStorage.getItem("questState"));
+                if (questState) {
+                    questState.forEach((quest) => {
+                        if (quest.completed) {
+                            completeQuest(quest.id);
+                        }
+                    });
+                }
+            }
+
+            // Generate and add random quests to the list initially
+            for (let i = 1; i <= 3; i++) {
+                const { description, reward } = generateRandomQuest();
+                addQuestToList(i, description, reward);
+            }
+
+            // Load quest state from localStorage when the page loads
+            document.addEventListener("DOMContentLoaded", loadQuestState);
+        </script>
+        <script src="quests.m"></script>
+        <script src="user.js"></script>
+        <script src="window.js"></script>
+        <script src="os.js"></script>
+        <script src="main.js"></script>
+        <script src="index.js"></script>
+        <script src="users.js"></script>
+        <script src="gameloop.js"></script>
+        <script src="gamestate.js"></script>
+        <script src="cycles.js"></script>
+        <script src="observation.js"></script>
+    </div>
+</body>
+
+</html>

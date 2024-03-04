@@ -1,0 +1,55 @@
+<--- file=robjam1990/psychosis/gameplay/characters/create.html --->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychosis - Create Your Character</title>
+    <!-- Add any necessary CSS or external libraries here for styling and functionality -->
+</head>
+<body>
+    <header>
+        <h1>Create Your Character</h1>
+    </header>
+
+    <section id="characterCreation">
+        <!-- Your character creation elements go here -->
+        <form action="process_character.php" method="post">
+            <label for="characterName">Character Name:</label>
+            <input type="text" id="characterName" name="characterName" required>
+
+            <label for="characterClass">Choose a Class:</label>
+            <select id="characterClass" name="characterClass" required>
+                <option value="warrior">Warrior</option>
+                <option value="chemist">chemist</option>
+                <option value="rogue">Rogue</option>
+                <!-- Add more class options as needed -->
+
+            </select>
+
+            <label for="characterRace">Choose a Nation:</label>
+            <select id="characterRace" name="characterRace" required>
+                <option value="Bractalia">Bractalia</option>
+                <option value="kinderyarn">Kinderyarn</option>
+                <option value="Thipse">Thipse</option>
+                <!-- Add more race options as needed -->
+
+            </select>
+
+            <!-- Add other character creation fields based on your game design -->
+            <form action=""process_character.php" method="post" onsubmit="return validateForm()">
+            
+            <button type="submit">Create Character</button>
+        </form>
+
+        <script src="psychosis/gameplay/characters/create.py"></script>
+    </section>
+
+    <footer>
+        <!-- Add any footer information or navigation links if needed -->
+    </footer>
+
+    <!-- Include necessary JavaScript files or scripts for interactivity -->
+    <script src="path/to/your/characterCreationScript.js"></script>
+</body>
+</html>

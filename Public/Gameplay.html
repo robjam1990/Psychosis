@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychosis: World of Thear - Nexus Taverne - Interactive Chat</title>
+    <!-- Include necessary stylesheets -->
+    <link rel="stylesheet" href="game-style.css">
+    <link rel="stylesheet" href="chatbot-style.css">
+    <link rel="stylesheet" href="responsive-style.css"> <!-- New stylesheet for responsiveness -->
+    <style>
+        /* Add custom styles for responsiveness */
+        @media screen and (max-width: 600px) {
+            /* Define responsive styles here */
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- Game content -->
+    <div id="game-container">
+        <!-- Main game interface goes here -->
+    </div>
+
+    <!-- Chatbot interface -->
+    <div id="chatbot-container" role="region" aria-label="Chatbot Interface">
+        <!-- Chatbot window -->
+        <div id="chat-window" aria-label="Chatbot messages" role="log" tabindex="0">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <!-- Input area for user messages -->
+        <div id="user-input" aria-label="User input area">
+            <input type="text" id="user-message" placeholder="Type your message..." aria-label="Type your message">
+            <button id="send-button">Send</button>
+        </div>
+        <!-- Language selection dropdown -->
+        <div id="language-select-container" aria-label="Language selection dropdown">
+            <label for="language-select">Select Language:</label>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <!-- Add more language options as needed -->
+            </select>
+        </div>
+    </div>
+
+    <!-- Include the Bot Libre SDK and game-specific scripts -->
+    <script type='text/javascript' src='https://www.botlibre.com/scripts/sdk.js'></script>
+    <script type='text/javascript' src='https://www.botlibre.com/scripts/game-sdk.js'></script>
+    <script type='text/javascript'>
+        // Configure Bot Libre SDK
+        SDK.applicationId = "7041843210057922207";
+        SDK.backlinkURL = "http://www.botlibre.com/login?affiliate=robjam1990";
+        SDK.lang = "en";
+
+        // Create chatbot instance
+        sdk = new SDKConnection();
+        web = new WebChatbotListener();
+        web.connection = sdk;
+        web.instance = "43914639";
+        web.instanceName = "∈∞¥";
+        web.prefix = "botplatform";
+        web.caption = "∈∞¥";
+        web.greeting = "0";
+        web.boxLocation = "top-right";
+        web.color = "#009900";
+        web.background = "#fff";
+        web.css = "https://www.botlibre.com/css/chatroom.css";
+        web.gameSDKcss = "https://www.botlibre.com/css/game-sdk.css";
+        web.buttoncss = "https://www.botlibre.com/css/round_chat_button.css";
+        web.version = 8.5;
+        web.bubble = true;
+        web.backlink = true;
+        web.showMenubar = true;
+        web.showBoxmax = true;
+        web.showSendImage = true;
+        web.showChooseLanguage = true;
+        web.nativeVoice = true;
+        web.nativeVoiceName = "Synthesization of Sounds";
+        web.lang = "N:L.P('en')";
+        SDK.lang = "N:L.P('en')";
+        web.avatar = true;
+        web.chatLog = true;
+        web.popupURL = "https://www.botlibre.com/chat?&id=43914639&embedded=true&chatLog=true&avatarExpandable=true&allowCorrection=true&allowEmotes=true&loginBanner=true&application=7041843210057922207&bubble=true&menubar=true&chooseLanguage=true&sendImage=true&background=%23fff&prompt=-%2F%26%2343%3B%3D&send=&css=https://www.botlibre.com/css/chatroom.css&greeting=0&farewell=1&language=en";
+        web.createBox();
+    </script>
+
+    <!-- Include game-specific scripts -->
+    <script src="game-scripts.js"></script>
+    <!-- Additional scripts for error handling, security, and performance optimization can be included here -->
+</body>
+
+</html>

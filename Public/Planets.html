@@ -1,0 +1,53 @@
+<--- File=robjam1990/Psychosis/Gameplay/Planets/Planets.html --->
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Planets</title>
+        <style>
+            /* Add your CSS styles here */
+        </style>
+    </head>
+
+    <body>
+        <h2>Planets</h2>
+        <div id="planets-list">
+            <!-- This is where we'll dynamically generate the list of planets -->
+        </div>
+
+        <script>
+            // Define planets data
+            const planets = [
+                { name: "Planet A", description: "This is the first planet in the solar system." },
+                { name: "Planet B", description: "The second planet is known for its vast oceans." },
+                // Add more planets as needed
+            ];
+
+            // Function to dynamically generate the list of planets
+            function generatePlanetsList() {
+                const planetsListDiv = document.getElementById("planets-list");
+                planets.forEach(planet => {
+                    const planetDiv = document.createElement("div");
+                    planetDiv.innerHTML = `
+                    <h3>${planet.name}</h3>
+                    <p>${planet.description}</p>
+                    <button onclick="explorePlanet('${planet.name}')">Explore</button>
+                `;
+                    planetsListDiv.appendChild(planetDiv);
+                });
+            }
+
+            // Function to handle planet exploration
+            function explorePlanet(planetName) {
+                // You can implement functionality to explore the planet here
+                alert(`Exploring ${planetName}...`);
+            }
+
+            // Call the function to generate the list when the page loads
+            window.onload = generatePlanetsList;
+        </script>
+    </body>
+
+    </html>

@@ -1,0 +1,190 @@
+<--- File = robjam1990/Psychosis/Psychosis.html --->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychosis</title>
+    <style>
+        /* CSS styles for the game interface */
+        body {
+            font: 10pt Cousine, monospace;
+            margin: 2em;
+        }
+
+        h1 {
+            font-size: 14pt;
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        /* Add your CSS styles for passages and other elements here */
+    </style>
+</head>
+
+<body>
+    <h1>Psychosis</h1>
+
+    <!--  story data -->
+    <storydata name="Psychosis" startnode="1" creator="robjam1990" creator-version="0.6.0" format="ML"
+        format-version="0.6.0" ifid="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}"
+        ,ifelseid="{A76D0686-5E74-4B6F-A179-D99792D734E8}" ,elseifid="{BE96E2D1-25EA-47D6-A563-E6C3FE9F8CD6}" options="" tags=""
+        zoom="1" hidden>
+        <script src="Characters.js"></script> <!-- Linked to external JavaScript file for character creation -->
+
+        <!-- Define passages for different aspects of the game -->
+        <!-- Prologue -->
+        <passagedata pid="1" name="Prologue" tags="prologue">
+            <!-- Your prologue content goes here -->
+            <p>Welcome to the world of Thear. You awaken in the dimly lit main hall of Ye Olde Taverne...</p>
+            <p><a href="2">Continue</a></p>
+        </passagedata>
+
+        <!-- Main Hall of the Tavern in Nexus -->
+        <passagedata pid="2" name="Main Hall" tags="location tavern nexus">
+            <!-- Description and events for the main hall of the tavern -->
+            <p>You find yourself in the bustling main hall of Ye Olde Taverne. Patrons chat over tankards of ale...</p>
+            <p><a href="3">Explore the tavern</a></p>
+        </passagedata>
+
+        <!-- Tactical Combat -->
+        <passagedata pid="3" name="Combat" tags="combat">
+            <!-- Implement your tactical combat system here -->
+            <p>A band of brigands ambush you! Choose your actions wisely:</p>
+            <ul>
+                <li><a href="4">Fight</a></li>
+                <li><a href="2">Flee</a></li>
+            </ul>
+        </passagedata>
+
+        <!-- Ecosystem Simulation -->
+        <passagedata pid="4" name="Ecosystem" tags="ecosystem">
+            <!-- Implement the ecosystem simulation and animal communication -->
+            <p>You encounter a forest teeming with life. Creatures communicate in strange ways...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Nation Building and Multi-Faction War -->
+        <passagedata pid="5" name="Nation Building" tags="nation war">
+            <!-- Mechanics for raising a nation to power and participating in a multi-faction war -->
+            <p>You have the opportunity to establish your own nation and lead it to glory in the midst of a chaotic war...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Social Infrastructure -->
+        <passagedata pid="6" name="Social Infrastructure" tags="social bounty hierarchy">
+            <!-- Implement the social infrastructure, including the bounty system and hierarchies -->
+            <p>As you navigate through the world, you'll encounter various social structures and systems...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Individual Loyalty, Fear, Respect & Morality Spectrum -->
+        <passagedata pid="7" name="Loyalty and Morality" tags="loyalty morality">
+            <!-- Mechanics for individual loyalty, fear, respect, and morality -->
+            <p>Your actions will influence how others perceive you, affecting loyalty, fear, and respect...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Territory Expansion -->
+        <passagedata pid="8" name="Territory Expansion" tags="territory">
+            <!-- Mechanics for territory border expansion -->
+            <p>Expand your territory strategically to increase your influence and resources...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Time, Day/Night & Season Cycles -->
+        <passagedata pid="9" name="Time and Cycles" tags="time day-night seasons">
+            <!-- Implement time, day/night cycle, and season mechanics -->
+            <p>The passage of time affects various aspects of the game world...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Structures -->
+        <passagedata pid="10" name="Structures" tags="structures">
+            <!-- Mechanics for constructing, repairing, and destroying structures -->
+            <p>Construct and manage structures to support your endeavors...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Prisoners -->
+        <passagedata pid="11" name="Prisoners" tags="prisoners">
+            <!-- Mechanics for taking prisoners or deciding their fate -->
+            <p>Decide the fate of those who oppose you...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Hiring and Delegation -->
+        <passagedata pid="12" name="Hiring and Delegation" tags="hire army delegation">
+            <!-- Implement hiring others, raising armies, and delegation system -->
+            <p>Recruit allies and delegate tasks to expand your influence...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Supply and Demand -->
+        <passagedata pid="13" name="Supply and Demand" tags="supply-demand barter">
+            <!-- Implement the supply and demand system driving the barter economy -->
+            <p>Trade goods to meet the demands of the populace...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Resource System -->
+        <passagedata pid="14" name="Resource System" tags="resources">
+            <!-- Implement renewable and non-renewable resource system -->
+            <p>Manage resources wisely to ensure the survival and growth of your nation...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Crafting System -->
+        <passagedata pid="15" name="Crafting System" tags="crafting metallurgy">
+            <!-- Implement in-depth crafting system utilizing metallurgy -->
+            <p>Craft weapons, armor, and tools using advanced metallurgical techniques...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Survival System -->
+        <passagedata pid="16" name="Survival System" tags="survival">
+            <!-- Implement advanced survival system including various factors -->
+            <p>Survive in the harsh wilderness by managing your character's vital needs...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Character Growth -->
+        <passagedata pid="17" name="Character Growth" tags="character-growth">
+            <!-- Implement advanced character growth mechanics -->
+            <p>Grow and develop your character through experience and challenges...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Learning and Teaching -->
+        <passagedata pid="18" name="Learning and Teaching" tags="learning teaching">
+            <!-- Implement learning and teaching mechanics -->
+            <p>Teach and learn new skills to adapt to the ever-changing world...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Observation System -->
+        <passagedata pid="19" name="Observation System" tags="observation empathy">
+            <!-- Implement observation system allowing empathetic learning -->
+            <p>Observe and learn from the world around you to gain insights and knowledge...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Character Customization -->
+        <passagedata pid="20" name="Character Customization" tags="customization reproduction">
+            <!-- Implement futuristic character customization and reproduction -->
+            <p>Customize your character's appearance and create offspring to continue your legacy...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+        <!-- Genetic Manipulation -->
+        <passagedata pid="21" name="Genetic Manipulation" tags="genetic-manipulation">
+            <!-- Implement genetic manipulation mechanics -->
+            <p>Experiment with genetic manipulation to create powerful beings...</p>
+            <p><a href="2">Return to the tavern</a></p>
+        </passagedata>
+
+    </storydata>
+</body>
+
+</html>

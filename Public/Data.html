@@ -1,0 +1,55 @@
+<--- file=robjam1990/psychosis/data/data.html --->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychosis Game Data</title>
+</head>
+<body>
+
+<script>
+    // Encapsulate your game-related functionality in a Game object
+    const Game = {
+        data: {
+            characters: [
+                { name: "Character1", class: "Warrior", health: 100, attack: 20 },
+                { name: "Character2", class: "Mage", health: 80, attack: 25 },
+                // Add more character data as needed
+            ],
+            locations: [
+                { name: "Main Hall", description: "The bustling Main Hall of the Taverne in Nexus." },
+                // Add more location data as needed
+            ],
+            // Other game-related data
+        },
+
+        // Modularize game initialization logic
+        initialize: function() {
+            // Implement your game initialization logic here
+            console.log("Game initialized");
+        },
+
+        // Add functions for specific game features or actions
+        displayCharacterInfo: function(characterName) {
+            const character = this.data.characters.find(char => char.name === characterName);
+            if (character) {
+                console.log(`Name: ${character.name}, Class: ${character.class}, Health: ${character.health}, Attack: ${character.attack}`);
+            } else {
+                console.error(`Character '${characterName}' not found.`);
+            }
+        },
+
+        // Extend the Game object with more functionalities as needed
+    };
+
+    // Call the initialization function from the Game object
+    Game.initialize();
+
+    // Example usage of displaying character information
+    Game.displayCharacterInfo("Character1");
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Psychosis: Game Engine for Text-Based Adventure</title>
+    <meta name="description"
+        content="Embark on a journey through Thear, shaping your destiny in this immersive text-based adventure game engine.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@robjam1990">
+    <meta name="twitter:title" content="Psychosis">
+    <meta name="twitter:image" content="images/Ark.png">
+    <meta name="twitter:description"
+        content="Embark on a journey through Thear, shaping your destiny in this immersive text-based adventure game engine.">
+    <link rel="shortcut icon" href="https://yourgame.com/favicon.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS styles for visual enhancements */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #666;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            /* Change color on hover */
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #666;
+        }
+
+        #features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .feature {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            /* Add hover effect */
+        }
+
+        .feature h3 {
+            color: #333;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+        .action-button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content" class="markdown-section">
+        <header>
+            <!-- Example of UI enhancements: Adding tooltips to interactive elements -->
+            <button class="action-button" title="Interact with NPC">Talk</button>
+
+            <h1 id="heading">
+                Psychosis: A Text-Based Adventure
+            </h1>
+        </header>
+
+        <nav id="topbar">
+            <a href="/documentation">Documentation</a>
+            <a href="/gameplay">Gameplay</a>
+            <a href="/characters">Characters</a>
+            <a href="/world">World</a>
+            <a href="/updates">Updates</a>
+        </nav>
+
+        <main id="main-content">
+            <p id="summary">
+                Dive into the immersive world of Thear, where every decision shapes your destiny. From the bustling Main
+                Hall of the Nexus Tavern to the far reaches of Bractalia, embark on a journey filled with intrigue,
+                combat, and diplomacy.
+            </p>
+
+            <h2>Menu</h2>
+
+            <div id="features">
+                <div class="feature">
+                    <h3>State Management</h3>
+                    <p>Manage your character's state seamlessly as you navigate through Thear.</p>
+                </div>
+                <div class="feature">
+                    <h3>Exploration</h3>
+                    <p>Discover every corner of the solar system and explore round planets.</p>
+                </div>
+                <div class="feature">
+                    <h3>Tactical Combat</h3>
+                    <p>Engage in strategic battles with a limb removal system.</p>
+                </div>
+                <div class="feature">
+                    <h3>Ecosystem Simulation</h3>
+                    <p>Interact with a dynamic ecosystem, including animal communication.</p>
+                </div>
+                <div class="feature">
+                    <h3>Nation Building</h3>
+                    <p>Raise a nation to power and join a multi-faction war, managing logistics, agriculture, commerce,
+                        and succession.</p>
+                </div>
+                <div class="feature">
+                    <h3>Social Infrastructure</h3>
+                    <p>Experience a fully realized social structure with a bounty system, hierarchies, and individual
+                        loyalty, fear, respect, and morality.</p>
+                </div>
+                <div class="feature">
+                    <h3>Territory Expansion</h3>
+                    <p>Expand your territory's borders through strategic decisions and conquest.</p>
+                </div>
+                <div class="feature">
+                    <h3>Time and Seasons</h3>
+                    <p>Experience realistic time, day/night, and seasonal cycles.</p>
+                </div>
+                <!-- Add more features here -->
+            </div>
+
+            <h2>Installation</h2>
+
+            <code>
+                npm install psychosis
+            </code>
+
+            <h2>Support Us</h2>
+
+            <p>
+                Support the development of Psychosis by following <a
+                    href="https://twitter.com/robjam1990">@robjam1990</a>
+                on Twitter.
+            </p>
+
+            <h2>License</h2>
+
+            <p>
+                Psychosis is licensed under the MIT License.
+            </p>
+        </main>
+    </div>
+</body>
+
+</html>

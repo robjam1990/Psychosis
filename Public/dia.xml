@@ -1,0 +1,110 @@
+<--- File = robjam1990/Psychosis/dia.xml --->
+<?xml version="1.0" encoding="UTF-8"?>
+<game><name>Psychosis</name>
+    <!-- categories.xml -->
+<categories>
+    <category id="1">
+        <name>Clear Dialog History</name>
+        <description>Clears the dialog history.</description>
+        <action>Cleared.</action>
+    </category>
+    <category id="2">
+        <name>Badly Formatted Dialog Exchange</name>
+        <description>Handles badly formatted dialog exchanges.</description>
+        <action>Badly formatted dialog exchange: {input}</action>
+    </category>
+    <category id="3">
+        <name>Handle Dialog Exchange</name>
+        <description>Handles dialog exchanges.</description>
+        <action>{input} {response}</action>
+    </category>
+    <category id="4">
+        <name>Dialog History</name>
+        <description>Displays the dialog history.</description>
+        <action>
+            <foreach from="31" to="1" step="-1" var="i">
+                XEXCHANGE request{i} XHUMAN <request index="{i}"/> XBOT <response index="{i}"/>
+            </foreach>
+        </action>
+    </category>
+    <category id="5">
+        <name>Test Request Indices</name>
+        <description>Tests request indices.</description>
+        <action>
+            request 1 = <request/>.
+            request 2 = <request index="2"/>.
+            request 3 = <request index="3"/>.
+        </action>
+    </category>
+    <category id="6">
+        <name>Default</name>
+        <description>Default response for unmatched patterns.</description>
+        <action>I'm sorry, I didn't understand that. Can you please rephrase your question?</action>
+    </category>
+    <category id="7">
+        <name>Make API Call</name>
+        <description>Makes an API call.</description>
+        <action>Processing API call for {input}...</action>
+    </category>
+    <category id="8">
+        <name>Process API Response</name>
+        <description>Processes the API response.</description>
+        <action>
+            <cond>
+                <li value="200">{response}</li>
+                <li value="404">The requested resource was not found.</li>
+                <li value="500">Internal Server Error. Please try again later.</li>
+                <li value="default">Unknown Error</li>
+            </cond>
+        </action>
+    </category>
+</categories>
+
+<!-- configurations.xml -->
+<configurations>
+    <configuration id="1">
+        <name>Debug/Win32</name>
+        <properties>
+            <useDebugLibraries>true</useDebugLibraries>
+            <platformToolset>v142</platformToolset>
+            <characterSet>Unicode</characterSet>
+            <!-- Additional properties here -->
+        </properties>
+    </configuration>
+    <configuration id="2">
+        <name>Release/Win32</name>
+        <properties>
+            <useDebugLibraries>false</useDebugLibraries>
+            <platformToolset>v142</platformToolset>
+            <wholeProgramOptimization>true</wholeProgramOptimization>
+            <characterSet>Unicode</characterSet>
+            <!-- Additional properties here -->
+        </properties>
+    </configuration>
+    <configuration id="3">
+        <name>Debug/x64</name>
+        <properties>
+            <useDebugLibraries>true</useDebugLibraries>
+            <platformToolset>v142</platformToolset>
+            <characterSet>Unicode</characterSet>
+            <!-- Additional properties here -->
+        </properties>
+    </configuration>
+    <configuration id="4">
+        <name>Release/x64</name>
+        <properties>
+            <useDebugLibraries>false</useDebugLibraries>
+            <platformToolset>v142</platformToolset>
+            <wholeProgramOptimization>true</wholeProgramOptimization>
+            <characterSet>Unicode</characterSet>
+            <!-- Additional properties here -->
+        </properties>
+    </configuration>
+</configurations>
+
+<!-- browsers.xml -->
+<browsers>
+    <!-- Browser definitions here -->
+</browsers>
+
+</game>

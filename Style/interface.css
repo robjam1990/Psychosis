@@ -1,0 +1,70 @@
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: scroll;
+    background-attachment: fixed;
+    margin: 0;
+    height: 100%;
+}
+
+a.cmdlink {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+a.cmdlink.disabled {
+    text-decoration: none;
+    color: inherit !important;
+    cursor: inherit;
+}
+
+#gameBorder {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid silver;
+    padding: 10px;
+}
+
+#gamePanel,
+#gridPanel,
+#gameContent {
+    width: 100%;
+    text-align: center;
+}
+
+#gamePanes {
+    width: 25%;
+    float: right;
+    background: #f9f9ff;
+    min-height: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+#txtCommand {
+    width: 90%;
+    font-size: 20px;
+    padding: 6px;
+}
+
+.ui-button {
+    font-size: 12px !important;
+}
+
+.elementListWrapper {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.elementList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.elementList li {
+    padding: 3px;
+    cursor: default;
+}

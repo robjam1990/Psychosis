@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ye Olde Taverne</title>
+    <style>
+        /* Styling for main container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Styling for input fields and buttons */
+        input[type="text"],
+        input[type="password"],
+        button {
+            display: block;
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+        }
+
+        /* Styling for headings */
+        h2,
+        h3 {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Welcome to Ye Olde Taverne</h2>
+
+        <!-- Sign Up Section -->
+        <h3>Sign Up</h3>
+        <input type="text" id="signupUsername" placeholder="Username">
+        <input type="password" id="signupPassword" placeholder="Password">
+        <button onclick="signUp()">Register</button>
+
+        <!-- Log In Section -->
+        <h3>Log In</h3>
+        <input type="text" id="loginUsername" placeholder="Username">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button onclick="logIn()">Login</button>
+
+        <!-- Ask the Barkeep Section -->
+        <h3>Ask the Barkeep</h3>
+        <input type="text" id="searchUsername" placeholder="Enter username...">
+        <button onclick="searchUsers()">Search</button>
+
+        <!-- Join a Table Section -->
+        <h3>Join a Table</h3>
+        <input type="text" id="groupConversationId" placeholder="Enter group ID...">
+        <button onclick="joinGroup()">Join</button>
+
+        <!-- Explore Section -->
+        <h3>Explore</h3>
+        <input type="text" id="viewUserProfile" placeholder="Enter username...">
+        <button onclick="viewProfile()">View Profile</button>
+
+        <!-- Noticeboard and Refresh Section -->
+        <button onclick="noticeboard()">Noticeboard</button>
+        <button onclick="refresh()">Refresh</button>
+    </div>
+
+    <script src="client.ts"></script>
+    <script src="Map.js"></script>
+    <script src="user.js"></script>
+    <script src="window.js"></script>
+    <script src="os.js"></script>
+    <script src="main.js"></script>
+    <script src="index.js"></script>
+    <script src="users.js"></script>
+    <script src="Taverne.js"></script>
+    <script src="entitycollection.js"></script>
+    <script src="npc.js"></script>
+    <script src="maia.js"></script>
+    <script src="barkeep.js"></script>
+    <script src="aslo.js"></script>
+    <script src="ark.js"></script>
+    <script src="ark_nn.js"></script>
+    <script src="Aithaluwa.js"></script>
+    <script src="entity_nn.js"></script>
+    <script src="survival.js"></script>
+    <script src="observation.js"></script>
+    <script src="movement.js"></script>
+    <script src="gameloop.js"></script>
+    <script src="gamestate.js"></script>
+    <script src="cycles.js"></script>
+    <script src="objects.js"></script>
+    <script src="create.js"></script>
+    <script src="eco.js"></script>
+    <script src="social.js"></script>
+
+    <script>
+        // Functions to open the Ye Olde Taverne interface in a new page
+        function signUp() {
+            window.open("Signup.html", "_blank");
+        }
+        function logIn() {
+            window.open("Login.html", "_blank");
+        }
+        function searchUsers() {
+            window.open("data.html", "_blank");
+        }
+        function joinGroup() {
+            window.open("social.html", "_blank");
+        }
+        function viewProfile() {
+            window.open("character.html", "_blank");
+        }
+        function noticeboard() {
+            window.open("noticeboard.html", "_blank");
+        }
+        function refresh() {
+            window.open("taverne.html", "_blank");
+        }
+    </script>
+
+
+</body>
+
+</html>

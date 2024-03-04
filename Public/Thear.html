@@ -1,0 +1,115 @@
+<--- File = robjam1990/Psychosis/Gameplay/Planets/Thear/Thear.html --->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychosis: Thear Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="site-title">Psychosis: Thear Adventure</h1>
+        <!-- Main game navigation -->
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Inventory</a></li>
+                <li><a href="#">Quests</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Main game content -->
+        <main>
+            <!-- Display game view and actions -->
+            <div id="game-view">
+                <!-- Display current location, description, and interactions -->
+                <h2>Main Hall of Nexus Taverne</h2>
+                <p>Welcome to the bustling Taverne in the heart of Nexus!</p>
+                <!-- Display combat actions -->
+                <div id="combat-actions">
+                    <button class="combat-action" onclick="attack()">Attack</button>
+                    <button class="combat-action" onclick="defend()">Defend</button>
+                    <!-- Add more combat actions -->
+                </div>
+                <!-- Display animal interaction options -->
+                <div id="animal-interactions">
+                    <button class="animal-interaction" onclick="speak()">Speak to Animal</button>
+                    <button class="animal-interaction" onclick="feed()">Feed Animal</button>
+                    <!-- Add more animal interaction options -->
+                </div>
+                <!-- Display time and day/night cycle -->
+                <div id="time-display">
+                    <p>Day 1, Morning</p>
+                </div>
+                <!-- Display available items for trade -->
+                <div id="trade-options">
+                    <h3>Trade Options</h3>
+                    <ul>
+                        <li>Food - 5 gold</li>
+                        <li>Weapon - 20 gold</li>
+                        <!-- Add more trade options -->
+                    </ul>
+                </div>
+                <!-- Display active quests -->
+                <div id="active-quests">
+                    <h3>Active Quests</h3>
+                    <p>No active quests</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Chat interface for interacting with NPCs -->
+        <div id="chatInterface" style="display: none;">
+            <h2>NPC Interaction</h2>
+            <div class="chat-container" id="chatContainer"></div>
+            <form id="messageForm" class="form">
+                <input type="text" id="messageInput" placeholder="Type your message" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Links to additional game features or settings -->
+        <ul>
+            <li><a href="#">Save Game</a></li>
+            <li><a href="#">Load Game</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </footer>
+
+    <script src="app.js" async></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Example functions for combat and animal interaction
+        function attack() {
+            // Implement combat logic
+            console.log("You launch a fierce attack!");
+        }
+
+        function defend() {
+            // Implement defensive action
+            console.log("You prepare to defend against the enemy's attack.");
+        }
+
+        function speak() {
+            // Implement communication with animals
+            console.log("You attempt to communicate with the nearby animal.");
+        }
+
+        function feed() {
+            // Implement feeding animals
+            console.log("You offer food to the hungry animal.");
+        }
+    </script>
+</body>
+
+</html>
