@@ -1,55 +1,156 @@
-<--- file=robjam1990/psychosis/data/data.html --->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psychosis Game Data</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-y: scroll;
+            background-attachment: fixed;
+            margin: 0;
+            height: 100%;
+        }
+
+        a.cmdlink {
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+        }
+
+        a.cmdlink.disabled {
+            text-decoration: none;
+            color: inherit !important;
+            cursor: inherit;
+        }
+
+        #gameBorder {
+            width: 90%;
+            margin: 0 auto;
+            border: 1px solid silver;
+            padding: 10px;
+        }
+
+        #gamePanel,
+        #gridPanel,
+        #gameContent {
+            width: 100%;
+            text-align: center;
+        }
+
+        #gamePanes {
+            width: 25%;
+            float: right;
+            background: #f9f9ff;
+            min-height: 100%;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #txtCommand {
+            width: 90%;
+            font-size: 20px;
+            padding: 6px;
+            margin: 10px auto;
+            /* Added margin for better spacing */
+            display: block;
+            /* Ensures the input field is displayed as a block element */
+        }
+
+        .ui-button {
+            font-size: 12px !important;
+        }
+
+        .elementListWrapper {
+            max-height: 200px;
+            overflow-y: scroll;
+        }
+
+        .elementList {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .elementList li {
+            padding: 3px;
+            cursor: default;
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Header with buttons -->
+    <header>
+        <h1>Psychosis Game Data</h1>
+        <button id="btnSearchEncyclopedia">Search Encyclopedia</button>
+        <button id="btnInquire">Inquire</button>
+        <!-- Link to character.html -->
+        <a href="character.html">View Character</a>
+    </header>
 
-<script>
-    // Encapsulate your game-related functionality in a Game object
-    const Game = {
-        data: {
-            characters: [
-                { name: "Character1", class: "Warrior", health: 100, attack: 20 },
-                { name: "Character2", class: "Mage", health: 80, attack: 25 },
-                // Add more character data as needed
-            ],
-            locations: [
-                { name: "Main Hall", description: "The bustling Main Hall of the Taverne in Nexus." },
-                // Add more location data as needed
-            ],
-            // Other game-related data
-        },
+    <!-- Main content area -->
+    <main>
+        <div id="gameBorder">
+            <div id="gamePanel">
+                <!-- Game panel content goes here -->
+            </div>
+            <div id="gridPanel">
+                <!-- Grid panel content goes here -->
+            </div>
+        </div>
+        <div id="gamePanes">
+            <!-- Game panes content goes here -->
+        </div>
+    </main>
 
-        // Modularize game initialization logic
-        initialize: function() {
-            // Implement your game initialization logic here
-            console.log("Game initialized");
-        },
+    <footer>
+        <input type="text" id="txtCommand" placeholder="Search">
+    </footer>
 
-        // Add functions for specific game features or actions
-        displayCharacterInfo: function(characterName) {
-            const character = this.data.characters.find(char => char.name === characterName);
-            if (character) {
-                console.log(`Name: ${character.name}, Class: ${character.class}, Health: ${character.health}, Attack: ${character.attack}`);
-            } else {
-                console.error(`Character '${characterName}' not found.`);
-            }
-        },
+    <script src="user.js" defer></script>
+    <script src="window.js" defer></script>
+    <script src="os.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="index.js" defer></script>
+    <script src="users.js" defer></script>
+    <script src="gamestate.js" defer></script>
+    <script src="gameloop.js" defer></script>
+    <script src="cycles.js" defer></script>
+    <script src="observation.js" defer></script>
+    <script src="movement.js" defer></script>
+    <script src="objects.js" defer></script>
+    <script src="social.js" defer></script>
+    <script src="commandline.js" defer></script>
+    <script src="read.js" defer></script>
+    <script src="Character.js" defer></script>
+    <script src="encyclopedia.js" defer></script>
 
-        // Extend the Game object with more functionalities as needed
-    };
+    <script>
+        // Search Encyclopedia button click event handler
+        document.getElementById('btnSearchEncyclopedia').addEventListener('click', function () {
+            // Get the search query from the input field
+            var searchQuery = document.getElementById('txtCommand').value;
+            // Clear the text field
+            document.getElementById('txtCommand').value = '';
+            // Show a popup with the search query
+            alert('Searching Encyclopedia for: ' + searchQuery);
+        });
 
-    // Call the initialization function from the Game object
-    Game.initialize();
-
-    // Example usage of displaying character information
-    Game.displayCharacterInfo("Character1");
-</script>
-
+        // Inquire button click event handler
+        document.getElementById('btnInquire').addEventListener('click', function () {
+            // Prompt the user to enter the name of the person to inquire
+            var personName = prompt('Enter the name of the person whom you want to make an inquiry to:');
+            // Clear the text field
+            document.getElementById('txtCommand').value = '';
+            // Show a popup with the person's name
+            alert('Inquiring about: ', 'txtCommand' + personName);
+        });
+    </script>
 </body>
-</html>
 
+</html>
