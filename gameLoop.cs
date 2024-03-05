@@ -1,4 +1,4 @@
-// "Game loop created and maintained by AI in C# for a text-based game called Psychosis."
+// "Game Loop created and maintained by AI in C# for a text-based game called Psychosis."
 using System;
 
 namespace Psychosis
@@ -235,6 +235,40 @@ namespace Psychosis
 
     }
 
+    public void LevelUp(Player player)
+    {
+        // Example logic for handling player level up
+        player.Level++;
+        player.ExperiencePoints = 0; // Reset experience points
+        player.Health = player.MaxHealth; // Fully heal the player
+        Console.WriteLine($"Congratulations! You are now level {player.Level}.");
+    }
+
+    public void CompleteQuest(Player player, Quest quest)
+    {
+        // Example logic for handling quest completion
+        quest.Status = QuestStatus.Completed;
+        player.ExperiencePoints += quest.ExperienceReward;
+        Console.WriteLine($"Quest '{quest.Name}' completed! You earned {quest.ExperienceReward} experience points.");
+    }
+
+    public void OpenChest(Player player, Chest chest)
+    {
+        // Example logic for handling opening a chest
+        if (chest.IsLocked)
+        {
+            Console.WriteLine("This chest is locked.");
+        }
+        else
+        {
+            foreach (var item in chest.Items)
+            {
+                player.Inventory.Add(item);
+                Console.WriteLine($"Added {item.Name} to your inventory.");
+            }
+            Console.WriteLine("Chest is now empty.");
+        }
+    }
     class Program
     {
         static void Main(string[] args)
