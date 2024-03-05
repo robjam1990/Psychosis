@@ -1,12 +1,17 @@
-<--- file=robjam1990/psychosis/gameplay/planets/thear/nexus.html --->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Town - Psychosis</title>
-    <!-- Add any additional meta tags or links to external stylesheets here -->
+    <title>Nexus - Intro - Psychosis</title>
+    <style>
+        /* Minified CSS */
+        body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:0;background-color:#f2f2f2;color:#333}header,nav,main,footer{padding:20px}header{background-color:#333;color:#fff;text-align:center}nav ul{list-style-type:none;padding:0;margin:0;text-align:center}nav ul li{display:inline;margin-right:20px}nav ul li a{color:#333;text-decoration:none;transition:color .3s ease}nav ul li a:hover{color:#666}main{background-color:#fff;padding:20px;margin:20px;border-radius:5px;box-shadow:0 0 10px rgba(0,0,0,.1)}section{margin-bottom:20px}footer{text-align:center;background-color:#333;color:#fff;padding:10px 0;position:fixed;bottom:0;width:100%}
+    </style>
+    <script src="intro.js" preload></script>
 </head>
+
 <body>
 
     <header>
@@ -14,29 +19,100 @@
         <p>Main Hall of the Taverne</p>
     </header>
 
-    <section id="description">
-        <h2>Town Overview</h2>
-        <p>Welcome to Nexus, a bustling town located in the country of Bractalia. The Main Hall of the Taverne is the central gathering place for adventurers like yourself. Explore the town and embark on your journey!</p>
-        <!-- Add more details about the town as needed -->
-    </section>
+    <nav>
+        <ul>
+            <li><a href="#description">Town Overview</a></li>
+            <li><a href="#character-creation">Character Creation</a></li>
+            <li><a href="#quests">Available Quests</a></li>
+        </ul>
+    </nav>
 
-    <section id="character-creation">
-        <h2>Character Creation</h2>
-        <p>Interact with the character creation system to shape your destiny. Make choices that will define your character's abilities, skills, and background. Your journey begins here!</p>
-        <!-- Add interactive elements for character creation -->
-    </section>
+    <main>
+        <section id="description">
+            <h2>Town Overview</h2>
+            <p>Welcome to Nexus, a bustling town located in the country of Bractalia. The Main Hall of the Taverne is
+                the
+                central gathering place for adventurers like yourself. Explore the town and embark on your journey!</p>
+            <!-- Add a button to reload the page -->
+            <button onclick="window.location.reload()">Reload Page</button>
+        </section>
 
-    <section id="quests">
-        <h2>Available Quests</h2>
-        <p>Discover quests and challenges in Nexus. Speak with the locals, gather information, and embark on epic adventures. Your decisions will shape the outcome of the game.</p>
-        <!-- Include details about quests and how players can start them -->
-    </section>
+        <section id="character-creation">
+            <h2>Character Creation</h2>
+            <p>Interact with the character creation system to shape your destiny. Make choices that will define your
+                character's abilities, skills, and background. Your journey begins here!</p>
+            <button onclick="createCharacter()">Create New Character</button>
+            <a>navagate to {character.html}</a>
+        </section>
+
+        <section id="quests">
+            <!-- Quests will be displayed here dynamically -->
+            <a>include clickable jobsearch to navigate to {taverne.html}</a>
+        </section>
+    </main>
 
     <footer>
         <p>Explore, interact, and enjoy your journey in the world of Psychosis!</p>
     </footer>
 
-    <!-- Add any necessary scripts or links to external scripts here -->
+    <!-- Your script tags -->
+    <script src="user.js"></script>
+    <script src="window.js"></script>
+    <script src="os.js"></script>
+    <script src="main.js"></script>
+    <script src="index.js"></script>
+    <script src="users.js"></script>
+    <script src="gamestate.js"></script>
+    <script src="gameloop.js"></script>
+    <script src="cycles.js"></script>
+    <script src="observation.js"></script>
+    <script src="movement.js"></script>
+    <script src="objects.js"></script>
+    <script src="social.js"></script>
+    <script src="intro.js"></script>
+    <script src="character.js"></script>
+    <script src="faction.js"></script>
+    <script src="eco.js"></script>
+    <script src="combat.js"></script>
+    <script src="thear.js"></script>
+    <script src="nexus.js"></script>
+    <script src="NPC.js"></script>
+    <script src="NPC_NN.js"></script>
+    <script src="create.js"></script>
+    <script>
+        // Function to create a new character
+        function createCharacter() {
+            // Redirect to character creation page
+            window.location.href = 'character.html';
+        }
+
+        // Function to display available quests
+        function displayQuests() {
+            // Placeholder code to display available quests
+            var questList = ['Retrieve the lost artifact', 'Defeat the dragon', 'Escort the merchant caravan'];
+            var questSection = document.getElementById('quests');
+            questSection.innerHTML = '<h2>Available Quests</h2>';
+            var ul = document.createElement('ul');
+            questList.forEach(function (quest) {
+                var li = document.createElement('li');
+                li.textContent = quest;
+                ul.appendChild(li);
+            });
+            questSection.appendChild(ul);
+        }
+
+        window.onload = function () {
+            // Check if characters exist and load intro script accordingly
+            var charactersExist = false; // Placeholder value, replace with actual logic
+            var introScript = document.createElement('script');
+            introScript.src = charactersExist ? '' : 'intro.js';
+            document.body.appendChild(introScript);
+
+            // Display available quests when the page loads
+            displayQuests();
+        };
+    </script>
 
 </body>
+
 </html>
