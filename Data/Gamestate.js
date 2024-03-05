@@ -1,3 +1,60 @@
+// playerActions.js
+class PlayerActions {
+    // Add methods to handle player actions
+}
+
+// enemyActions.js
+class EnemyActions {
+    // Add methods to handle enemy actions
+}
+
+// gameState.js
+class GameState {
+    constructor() {
+        // Initialize game state
+    }
+
+    update() {
+        // Add your code here to update the game state
+    }
+
+    isGameOver() {
+        // Add your code here to check if the game is over
+    }
+
+    load() {
+        const savedGameJSON = localStorage.getItem('savedGame');
+        if (savedGameJSON) {
+            const loadedGame = JSON.parse(savedGameJSON);
+            // Populate game state from loaded data
+        } else {
+            console.log("No saved game found.");
+        }
+    }
+
+    save() {
+        const gameJSON = JSON.stringify(this);
+        localStorage.setItem('savedGame', gameJSON);
+        console.log("Game saved.");
+    }
+
+    initialize() {
+        const playerName = prompt("Enter your character's name: ");
+        // Initialize game with default values
+    }
+}
+
+// renderer.js
+class Renderer {
+    constructor() {
+        // Initialize renderer
+    }
+
+    display() {
+        // Add your code here to display the game state
+    }
+}
+
 // Enums
 const Aim = {
     Dyslexic: 0,
@@ -9,7 +66,6 @@ const Aim = {
     Excellent: 6,
     Perfect: 7
 };
-
 const LimbStatus = {
     Usable: 0,
     Bruised: 1,
@@ -27,108 +83,76 @@ class ObjectDurability {
         this.maxDurability = maxDurability;
     }
 
+    repairWeapon(amount) {
+        // Add your code here to repair the weapon
+    }
+
     degrade(amount) {
-        this.durabilityPoints -= amount;
-        if (this.durabilityPoints < 0) {
-            this.durabilityPoints = 0;
-        }
+        // Add your code here to degrade the object
     }
 }
 
-// Class for Combatant
-class Combatant {
-    constructor(name, health, weaponDurability) {
-        this.name = name;
-        this.health = health;
-        this.conscious = true;
-        this.attackerAim = Aim.Good;
-        this.weaponDurability = new ObjectDurability(weaponDurability);
-        this.rightArmStatus = LimbStatus.Usable;
-        this.leftArmStatus = LimbStatus.Usable;
-        this.rightLegStatus = LimbStatus.Usable;
-        this.leftLegStatus = LimbStatus.Usable;
-        this.experience = 0;
-        this.level = 1;
-        this.damageBonus = 0;
-        this.defenseBonus = 0;
+class Encyclopedia {
+    constructor() {
+        this.entries = [];
     }
 
-    takeDamage(damage) {
-        this.health -= damage;
-        if (this.health <= 0) {
-            this.health = 0;
-            this.conscious = false;
+    addEntry(entry) {
+        this.entries.push(entry);
+    }
+
+    removeEntry(entry) {
+        const index = this.entries.indexOf(entry);
+        if (index !== -1) {
+            this.entries.splice(index, 1);
         }
     }
 
-    gainExperience(experience) {
-        this.experience += experience;
-        if (this.experience >= 100) {
-            this.levelUp();
-        }
+    searchEntry(keyword) {
+        return this.entries.filter(entry => entry.includes(keyword));
     }
+}
 
-    levelUp() {
-        this.level += 1;
-        this.experience = 0;
-        this.health += 10;
-        this.damageBonus += 5;
-        this.defenseBonus += 3;
-        console.log(`${this.name} has leveled up to level ${this.level}!`);
-    }
-
-    // Method to simulate limb removal
-    removeLimb(limb) {
-        if (limb === 'rightArm') {
-            this.rightArmStatus = LimbStatus.Removed;
-        } else if (limb === 'leftArm') {
-            this.leftArmStatus = LimbStatus.Removed;
-        } else if (limb === 'rightLeg') {
-            this.rightLegStatus = LimbStatus.Removed;
-        } else if (limb === 'leftLeg') {
-            this.leftLegStatus = LimbStatus.Removed;
-        }
-    }
+function levelUp() {
+    // Add your code here to handle level up
 }
 
 // Global variable to hold game state
-let game = {};
+const gameState = new GameState();
+
+// Function to run the game loop
+function runGameLoop() {
+    while (!gameState.isGameOver()) {
+        // Add your code here to run the game loop
+    }
+}
+
+// Start or load the game
+function startOrLoadGame() {
+    if (localStorage.getItem('savedGame')) {
+        console.log("Loading saved game...");
+        gameState.load();
+    } else {
+        console.log("No saved game found. Starting a new game.");
+        gameState.initialize();
+    }
+}
 
 // Function to save game state to local storage
 function saveGame() {
-    const gameJSON = JSON.stringify(game);
-    localStorage.setItem('savedGame', gameJSON);
-    console.log("Game saved:", gameJSON);
+    gameState.save();
 }
 
-// Function to load game state from local storage
-function loadGame() {
-    const gameJSON = localStorage.getItem('savedGame');
-    if (gameJSON) {
-        const loadedGame = JSON.parse(gameJSON);
-        Object.assign(game, loadedGame);
-        console.log("Game loaded:", game);
-    } else {
-        console.log("No saved game found.");
-    }
+// Handle player input
+function handleInput(input) {
+    // Handle player input here
 }
 
-// Function to start or load the game
-function startOrLoadGame() {
-    const savedGameJSON = localStorage.getItem('savedGame');
+// Event listeners for player input
+document.addEventListener('keydown', (event) => {
+    handleInput(event.key);
+});
 
-    if (savedGameJSON) {
-        console.log("Loading saved game...");
-        loadGame(savedGameJSON);
-    } else {
-        console.log("No saved game found. Starting a new game.");
-        game = initializeGame(); // Initialize new game state
-    }
-}
-
-// Function to initialize a new game state
-function initializeGame() {
-    const playerName = prompt("Enter your character's name: ");
-    const player = new Combatant(playerName, 100, 10);
-    return { player: player }; // Return initial game state
-}
+// Initialize the game
+startOrLoadGame();
+runGameLoop();
