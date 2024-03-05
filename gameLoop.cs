@@ -1,162 +1,254 @@
+// "Game loop created and maintained by AI in C# for a text-based game called Psychosis."
 using System;
 
-class Program
+namespace Psychosis
 {
-    // Example game object representing the initial game state
-    static dynamic game = new
+    public class GameplayLoop
     {
-        player = new
-        {
-            conscious = true,
-            position = new { x = 0, y = 0, z = 0 },
-            inventory = new dynamic[] { },
-            resources = new { gold = 0, silver = 0 },
-            stats = new
-            {
-                oxygen = 100, energy = 100, hunger = 0, fatigue = 0,
-                O2 = 100, temperature = "32°C", diseaseResistance = 100,
-                sanity = 100, toxicity = 0
-            }
-        },
-        environment = new
-        {
-            timeOfDay = "Morning",
-            season = "spring",
-            weather = "clear",
-            temperature = "-20°C to 40°C"
-        },
-        resources = new
-        {
-            oxygenSources = new dynamic[] { new { name = "Thear", amount = 79000 } },
-            foodSources = new dynamic[] { new { x = 100, y = 100, z = 1, amount = 120 } },
-            structures = new dynamic[] { new { name = "House", condition = 100 } },
-            heat = new dynamic[] { new { name = "Pyre", amount = 350 } }
-            // Add more resource types and structures as needed
-        }
-        // Add more game state properties as needed
-    };
 
-    // Update resource availability function
-    static void UpdateResourceAvailability()
-    {
-        // Update resource availability based on game world logic
-        // Example: Deplete or regenerate resources over time
-        foreach (dynamic resource in game.resources.oxygenSources)
+        public void Run()
         {
-            // Example: Oxygen depletion due to player breathing
-            resource.amount -= 1;
-            if (resource.amount <= 0)
+            while (true) // Main game loop
             {
-                // Handle depletion event
-                Console.WriteLine("Oxygen source depleted!");
-                // Implement regeneration logic if needed
+                // Step 1: Handle player movement and position updates
+                Movement();
+
+                // Step 2: Process combat between the player and any encountered enemies
+                Combat();
+
+                // Step 3: Allow the player to gather resources from the environment
+                ResourceGathering();
+
+                // Step 4: Manage player interactions with the game world, including NPCs and objects
+                Interaction();
+
+                // Step 5: Update the game state and perform any necessary background tasks
+                Update();
             }
         }
-        foreach (dynamic resource in game.resources.foodSources)
+
+
+
+        private void Update()
         {
-            // Example: Food consumption by the player
-            resource.amount -= 1;
-            if (resource.amount <= 0)
+            // Step 1: Update game world elements, such as weather, time of day, or AI behavior
+            UpdateGameWorld();
+
+            // Step 2: Check for any changes in player status, such as health, hunger, or inventory
+            UpdatePlayerStatus();
+
+            // Step 3: Perform any necessary background tasks, such as saving the game state or handling network communication
+            PerformBackgroundTasks();
+        }
+
+        private void UpdateGameWorld()
+        {
+            // Example: Update the current time of day
+            // gameWorld.UpdateTimeOfDay();
+            // Example: Update AI behavior for NPCs
+            // gameWorld.UpdateNPCs();
+        }
+
+        private void UpdatePlayerStatus()
+        {
+            // Example: Check and update player's health
+            // player.UpdateHealth();
+            // Example: Update player's hunger level
+            // player.UpdateHunger();
+        }
+
+        private void PerformBackgroundTasks()
+        {
+            // Example: Save the current game state
+            // SaveGameState();
+            // Example: Send or receive network messages
+            // HandleNetworkMessages();
+        }
+
+
+
+        private void ResourceGathering()
+        {
+            // Step 1: Check if the player is within range of a resource node
+            if (CheckPlayerNearResourceNode())
             {
-                // Handle depletion event
-                Console.WriteLine("Food source depleted!");
-                // Implement regeneration logic if needed
+                // Step 2: Determine the type and amount of resources available at the node
+                ResourceNode resourceNode = GetCurrentResourceNode();
+                int availableResources = resourceNode.Quantity;
+                string resourceType = resourceNode.Type;
+
+                // Step 3: Gather resources based on the player's gathering skill or tool efficiency
+                int gatheredResources = CalculateGatheredResources(resourceNode, player.GatheringSkill, player.CurrentTool);
+
+                // Step 4: Add the gathered resources to the player's inventory
+                player.Inventory.AddResources(resourceType, gatheredResources);
+
+                // Step 5: Update the resource node's remaining quantity
+                resourceNode.Quantity -= gatheredResources;
+
+                // Step 6: Provide feedback to the player about the resource gathering
+                Console.WriteLine($"You gathered {gatheredResources} {resourceType}(s).");
+            }
+            else
+            {
+                Console.WriteLine("No resources available nearby.");
             }
         }
-        // Add more resource types and update depletion/regeneration logic as needed
-    }
 
-    // Update player's survival status function
-    static void UpdateSurvivalStatus()
-    {
-        // Update player's survival status based on various factors (oxygen, hunger, sanity, etc.)
-        // Example: Decrease oxygen level, increase hunger, decrease sanity, etc.
-        game.player.stats.oxygen -= 1;
-        game.player.stats.hunger += 1;
-        game.player.stats.sanity -= 1;
-
-        // Example: Check for critical survival conditions
-        if (game.player.stats.oxygen <= 0)
+        private bool CheckPlayerNearResourceNode()
         {
-            Console.WriteLine("Out of oxygen! Game over!");
-            // Additional game over logic can be added here
-        }
-        if (game.player.stats.hunger >= 100)
-        {
-            Console.WriteLine("Starved to death! Game over!");
-            // Additional game over logic can be added here
-        }
-        if (game.player.stats.sanity <= 0)
-        {
-            Console.WriteLine("Lost sanity! Game over!");
-            // Additional game over logic can be added here
+            // Example: Check if the player is near a resource node
+            // This could be implemented using collision detection or distance checks
+            return true; // Placeholder return value
         }
 
-        // Implement additional survival status updates as needed
-    }
-
-    // Update game state function
-    static void UpdateGameState()
-    {
-        // Update player position
-        // Speed modifiers for different movement actions
-        dynamic Speed = new {}; // Placeholder for speed modifiers
-        // Example: Move player based on user input or AI
-        game.player.position.x += 1;
-        game.player.position.y += 1;
-        game.player.position.z += 1;
-
-        // Update environment
-        // Example: Adjust time of day and weather based on game world logic
-        game.environment.timeOfDay = "Morning"; // Replace with actual game logic
-        game.environment.weather = "Clear"; // Replace with actual game logic
-
-        // Update resource availability
-        UpdateResourceAvailability();
-
-        // Update player's survival status
-        UpdateSurvivalStatus();
-    }
-
-    // Render game function
-    static void RenderGame()
-    {
-        // Render player, environment, UI, etc.
-        Console.WriteLine("Rendering game...");
-    }
-
-    // Check if game is over
-    static bool IsGameOver()
-    {
-        // Check game over conditions (e.g., player death)
-        return game.player.stats.oxygen <= 0 || game.player.stats.hunger >= 100 || game.player.stats.sanity <= 0;
-    }
-
-    // Define the game loop function
-    static void GameLoop()
-    {
-        // Update game state
-        UpdateGameState();
-
-        // Render game
-        RenderGame();
-
-        // Check for game over or other conditions
-        if (!IsGameOver())
+        private ResourceNode GetCurrentResourceNode()
         {
-            // Continue the game loop
-            GameLoop();
+            // Example: Return the resource node the player is currently interacting with
+            // This method would need to access a list of resource nodes in the game world
+            return new ResourceNode("Wood", 100); // Placeholder return value
         }
-        else
+
+        private int CalculateGatheredResources(ResourceNode node, int gatheringSkill, Tool tool)
         {
-            // Game over
-            Console.WriteLine("Game over!");
+            // Example: Calculate the amount of resources gathered based on player skill and tool efficiency
+            // This could involve a formula that takes these factors into account
+            return 10; // Placeholder return value
+        }
+
+
+
+        private void Interaction()
+        {
+            // Step 1: Determine if the player is near an interactable object or NPC
+            Interactable interactable = GetNearbyInteractable();
+
+            if (interactable != null)
+            {
+                // Step 2: Display interaction options based on the type of interactable
+                DisplayInteractionOptions(interactable);
+
+                // Step 3: Handle the player's chosen interaction
+                HandleInteraction(interactable);
+            }
+            else
+            {
+                Console.WriteLine("Nothing nearby to interact with.");
+            }
+        }
+
+        private Interactable GetNearbyInteractable()
+        {
+            // Example: Find the nearest interactable object or NPC to the player
+            // This could involve collision detection, distance checks, or other methods
+            return null; // Placeholder return value
+        }
+
+        private void DisplayInteractionOptions(Interactable interactable)
+        {
+            // Example: Show the player a list of interaction options based on the type of interactable
+            // This could involve a UI element with buttons or a text menu with numbered options
+            Console.WriteLine("Press 1 to speak, 2 to trade, or 3 to attack.");
+        }
+
+        private void HandleInteraction(Interactable interactable)
+        {
+            // Example: Process the player's chosen interaction option
+            // This could involve triggering dialogues, initiating trades, or starting combat
+            Console.WriteLine("Handling interaction...");
+        }
+
+
+
+        private void Movement()
+        {
+            // Step 1: Get player input for movement (e.g., keyboard or controller input)
+            MovementDirection input = GetMovementInput();
+
+            // Step 2: Update the player's position based on the input
+            UpdatePlayerPosition(input);
+
+            // Step 3: Perform any necessary collision detection
+            CheckForCollision();
+        }
+
+        private MovementDirection GetMovementInput()
+        {
+            // Example: Detect player input for movement (e.g., arrow keys or analog stick)
+            // This method could return a custom enum representing movement directions (e.g., up, down, left, right)
+            return MovementDirection.Up; // Placeholder return value
+        }
+
+        private void UpdatePlayerPosition(MovementDirection input)
+        {
+            // Example: Update the player's position in the game world based on the input
+            // You could use a switch statement to handle each possible movement direction
+            Console.WriteLine($"Moving {input}...");
+        }
+
+        private void CheckForCollision()
+        {
+            // Example: Detect collisions with objects or other entities in the game world
+            // If a collision is detected, you might stop the player's movement or trigger some other reaction
+            Console.WriteLine("Checking for collisions...");
+        }
+
+
+
+        private void Combat()
+        {
+            // Step 1: Determine if the player is in range of an enemy
+            if (IsEnemyInRange())
+            {
+                // Step 2: Get player input for combat actions (e.g., attack, block, or use item)
+                CombatAction input = GetCombatInput();
+
+                // Step 3: Process the combat action and update the player's and enemy's status
+                ProcessCombatAction(input);
+            }
+            else
+            {
+                Console.WriteLine("No enemies in range.");
+            }
+        }
+
+        private bool IsEnemyInRange()
+        {
+            // Example: Check if the player is within a specified distance of an enemy
+            // This could involve collision detection or distance checks
+            return true; // Placeholder return value
+        }
+
+        private CombatAction GetCombatInput()
+        {
+            // Example: Detect player input for combat actions (e.g., button presses or keystrokes)
+            // This method could return a custom enum representing possible combat actions (e.g., attack, block, or use item)
+            return CombatAction.Attack; // Placeholder return value
+        }
+
+        private void ProcessCombatAction(CombatAction input)
+        {
+            // Example: Update player and enemy status based on the chosen combat action
+            // You might calculate damage, apply status effects, or handle other combat-related events
+            Console.WriteLine($"Processing combat action: {input}...");
+        }
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                GameplayLoop gameLoop = new GameplayLoop();
+                gameLoop.Run();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
         }
     }
 
-    // Start the game loop
-    static void Main(string[] args)
-    {
-        GameLoop();
-    }
 }
