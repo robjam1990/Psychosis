@@ -1,29 +1,124 @@
-<--- file=robjam1990/psychosis/gameplay/characters/character.html --->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psychosis - Character Creation</title>
-    <!-- Add any necessary CSS or external libraries here for styling and functionality -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            display: block; /* Change from 'inline-block' to 'block' */
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <h1>Character Creation</h1>
+        <h1>Psychosis - Character Creation</h1>
     </header>
 
     <section id="characterCreation">
-        <!-- Your interactive character creation elements go here -->
         <h2>Welcome to the World of Thear!</h2>
         <p>Begin your journey by crafting your unique character.</p>
-        <!-- Include input fields, buttons, and any interactive elements as per your design -->
+        <button id="startJourney">Start Your Journey</button>
+    </section>
+
+    <section id="characterCreationOptions" style="display:none;">
+        <label for="charactername">Character Name:</label>
+        <input type="text" id="charactername" placeholder="Enter your character's name">
+
+        <label for="characterClass">Character Class</label>
+        <select id="characterClass">
+            <option value="warrior">Warrior</option>
+            <option value="chemist">Chemist</option>
+            <option value="rogue">Rogue</option>
+        </select>
+
+        <label for="characterNation">Character Nation</label>
+        <select id="characterNation">
+            <option value="bractalia">Bractalia</option>
+            <option value="wolk">Wolk</option>
+            <option value="kinderyarn">Kinderyarn</option>
+            <option value="thipse">Thipse</option>
+            <option value="nymenada">Nymenada</option>
+            <option value="lochtou">Lochtou</option>
+            <option value="varthek">Varthek</option>
+            <option value="jight">Jight</option>
+            <option value="slake">Slake</option>
+        </select>
+
+        <button id="createCharacter">Create Character</button>
+    </section>
+
+    <section id="characterConfirmation" style="display:none;">
+        <h2>Character Information</h2>
+        <p id="confirmationMessage"></p>
+        <button id="confirmCharacter">Confirm</button>
+        <button id="cancelCharacter">Cancel</button>
     </section>
 
     <footer>
-        <!-- Add any footer information or navigation links if needed -->
+        <!-- Your footer content goes here -->
     </footer>
 
-    <!-- Include necessary JavaScript files or scripts for interactivity -->
-    <script src="path/to/your/characterCreationScript.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/characterCreate.js"></script>
+    <script src="server.js"></script>
+    <script>
+        document.getElementById('startJourney').addEventListener('click', function () {
+            document.getElementById('characterCreation').style.display = 'none';
+            document.getElementById('characterCreationOptions').style.display = 'block';
+        });
+
+        // Rest of the JavaScript logic goes here
+    </script>
 </body>
+
 </html>
