@@ -1,7 +1,7 @@
-from enum import Enum
+import json
 
 # Enums
-class Aim(Enum):
+class Aim:
     Dyslexic = 0
     Horrible = 1
     Poor = 2
@@ -11,116 +11,141 @@ class Aim(Enum):
     Excellent = 6
     Perfect = 7
 
-class LimbStatus(Enum):
-    Usable = 0
-    Bruised = 1
-    Dislocated = 2
-    Fractured = 3
-    Broken = 4
-    Unusable = 5
-    Removed = 6
-
-# Class for Object Durability
-class ObjectDurability:
-    def __init__(self, max_durability):
-        self.durability_points = max_durability
-        self.max_durability = max_durability
-
-    def degrade(self, amount):
-        self.durability_points -= amount
-        if self.durability_points < 0:
-            self.durability_points = 0
-
-# Class for Combatant
+# Class for combatant
 class Combatant:
-    def __init__(self, name, health, weapon_durability):
+    def __init__(self, name, health, level):
         self.name = name
         self.health = health
-        self.conscious = True
-        self.attacker_aim = Aim.Good
-        self.weapon_durability = ObjectDurability(weapon_durability)
-        self.right_arm_status = LimbStatus.Usable
-        self.left_arm_status = LimbStatus.Usable
-        self.right_leg_status = LimbStatus.Usable
-        self.left_leg_status = LimbStatus.Usable
+        self.level = level
         self.experience = 0
-        self.level = 1
-        self.damage_bonus = 0
-        self.defense_bonus = 0
+        self.weaponDurability = {"durabilityPoints": 0, "maxDurability": 0}
+        self.rightArmStatus = None
+        self.leftArmStatus = None
+        self.rightLegStatus = None
+        self.leftLegStatus = None
+        self.damageBonus = 0
+        self.defenseBonus = 0
 
-    def take_damage(self, damage):
-        self.health -= damage
-        if self.health <= 0:
-            self.health = 0
-            self.conscious = False
-
-    def gain_experience(self, experience):
-        self.experience += experience
-        if self.experience >= 100:
-            self.level_up()
-
-    def level_up(self):
-        self.level += 1
-        self.experience = 0
-        self.health += 10
-        self.damage_bonus += 5
-        self.defense_bonus += 3
-        print(f"{self.name} has leveled up to level {self.level}!")
-
-    # Method to simulate limb removal
-    def remove_limb(self, limb):
-        if limb == 'rightArm':
-            self.right_arm_status = LimbStatus.Removed
-        elif limb == 'leftArm':
-            self.left_arm_status = LimbStatus.Removed
-        elif limb == 'rightLeg':
-            self.right_leg_status = LimbStatus.Removed
-        elif limb == 'leftLeg':
-            self.left_leg_status = LimbStatus.Removed
-
-# Global variable to hold game state
-game = {}
-
-# Function to save game state to local storage
-def save_game():
-    import json
-    game_json = json.dumps(game)
-    with open('saved_game.json', 'w') as file:
-        file.write(game_json)
-    print("Game saved:", game_json)
-
-# Function to load game state from local storage
-def load_game():
-    import json
-    try:
-        with open('saved_game.json', 'r') as file:
-            loaded_game = json.load(file)
-            game.update(loaded_game)
-            print("Game loaded:", game)
-    except FileNotFoundError:
-        print("No saved game found.")
-
-# Function to start or load the game
-def start_or_load_game():
-    import os
-    if os.path.exists('saved_game.json'):
-        print("Loading saved game...")
-        load_game()
-    else:
-        print("No saved game found. Starting a new game.")
-        game.clear()  # Clear existing game state
-        initialize_game()  # Initialize new game state
-
-# Function to initialize a new game state
-def initialize_game():
+# Function to start a new game
+def start_new_game():
     player_name = input("Enter your character's name: ")
     player = Combatant(player_name, 100, 10)
-    game['player'] = player  # Return initial game state
+    return {
+        "player": player
+    }  # Return initial game state
+
+# Function to view character information
+def view_character(game):
+    print("Character Information:")
+    print(f"Name: {game['player'].name}")
+    print(f"Health: {game['player'].health}")
+    print(f"Level: {game['player'].level}")
+    print(f"Experience: {game['player'].experience}")
+    print(f"Weapon Durability: {game['player'].weaponDurability['durabilityPoints']}/{game['player'].weaponDurability['maxDurability']}")
+    print(f"Right Arm Status: {game['player'].rightArmStatus}")
+    print(f"Left Arm Status: {game['player'].leftArmStatus}")
+    print(f"Right Leg Status: {game['player'].rightLegStatus}")
+    print(f"Left Leg Status: {game['player'].leftLegStatus}")
+    print(f"Damage Bonus: {game['player'].damageBonus}")
+    print(f"Defense Bonus: {game['player'].defenseBonus}")
+
+# Function to observe the environment
+def observe_environment():
+    print("You observe your surroundings...")
+    # Add logic to describe the environment
+
+# Function to explore the environment
+def explore(player):
+    print("You start exploring...")
+    # Add logic for exploring the environment and encountering events
+
+# Function to handle combat logic
+def combat_logic(player):
+    print("You engage in combat...")
+    # Add logic for combat mechanics
+
+# Function to open options menu
+def open_options():
+    print("Options Menu:")
+    # Add logic for options menu
+
+# Function to get all saved games from local storage
+def get_all_saved_games():
+    saved_games_json = input("Enter saved games JSON: ") # Here, you should load from local storage
+    if saved_games_json:
+        return json.loads(saved_games_json)
+    else:
+        return []
+
+# Function to handle game over logic
+def game_over():
+    print("Game Over")
+    # Add logic for game over screen and actions
+
+# Function to handle victory logic
+def victory():
+    print("Victory!")
+    # Add logic for victory screen and actions
+
+# Function to handle player death
+def player_death():
+    print("You have died.")
+    # Add logic for player death screen and actions
+
+# Function to handle combat encounter
+def combat_encounter():
+    print("You encounter an enemy.")
+    # Add logic for combat encounter and actions
+
+# Function to handle exploring events
+def explore_events():
+    print("You encounter an event while exploring.")
+    # Add logic for exploring events and actions
+
+# Function to handle options menu actions
+def handle_options(choice):
+    if choice == "1":
+        print("Option 1 selected.")
+        # Add logic for option 1
+    elif choice == "2":
+        print("Option 2 selected.")
+        # Add logic for option 2
+    elif choice == "3":
+        print("Option 3 selected.")
+        # Add logic for option 3
+    else:
+        print("Invalid choice. Please choose a valid option.")
+
+# Function to handle main menu actions
+def handle_main_menu(choice, game):
+    if choice == "1":
+        game = start_new_game()
+    elif choice == "2":
+        load_game()
+    elif choice == "3":
+        view_character(game)
+    elif choice == "4":
+        observe_environment()
+    elif choice == "5":
+        explore(game["player"])
+    elif choice == "6":
+        combat_logic(game["player"])
+    elif choice == "7":
+        save_game()
+    elif choice == "8":
+        open_options()
+    elif choice == "9":
+        print("Thanks for playing! Goodbye.")
+        exit()
+    else:
+        print("Invalid choice. Please choose a valid option.")
 
 # Main game loop
 def main():
     print("Welcome to Psychosis!")
     print("You find yourself in a mysterious world.")
+
+    game = None
 
     while True:
         print("\nMain Menu:")
@@ -135,29 +160,10 @@ def main():
         print("9. Quit")
 
         choice = input("Choose an action (1-9): ")
-
-        if choice == "1":
-            game.clear()  # Clear existing game state
-            initialize_game()
-        elif choice == "2":
-            load_game()
-        elif choice == "3":
-            view_character()
-        elif choice == "4":
-            observe_environment()
-        elif choice == "5":
-            explore(game['player'])
-        elif choice == "6":
-            combat_logic(game['player'])
-        elif choice == "7":
-            save_game()
-        elif choice == "8":
-            open_options()
-        elif choice == "9":
-            print("Thanks for playing! Goodbye.")
-            break
-        else:
+        if not choice or not choice.isdigit() or int(choice) < 1 or int(choice) > 9:
             print("Invalid choice. Please choose a valid option.")
+            continue
+        handle_main_menu(choice, game)
 
-if __name__ == "__main__":
-    main()
+# Call the main function to start the game
+main()
