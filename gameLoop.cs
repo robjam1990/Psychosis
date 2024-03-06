@@ -41,13 +41,24 @@ namespace Psychosis
             PerformBackgroundTasks();
         }
 
+        /// <summary>
+        /// Updates the game world by performing various operations such as advancing the time of day,
+        /// updating AI behavior for non-player characters (NPCs), and processing other world events.
+        /// </summary>
         private void UpdateGameWorld()
         {
-            // Example: Update the current time of day
+            // Update the current time of day in the game world
+            // Example:
             // gameWorld.UpdateTimeOfDay();
-            // Example: Update AI behavior for NPCs
+            // Update AI behavior for NPCs in the game world
+            // Example:
             // gameWorld.UpdateNPCs();
+            // Example: Update the weather in the game world
+            // gameWorld.UpdateWeather();
+            // Example: Process pending events in the game world
+            // gameWorld.ProcessEvents();
         }
+
 
         private void UpdatePlayerStatus()
         {
@@ -233,56 +244,6 @@ namespace Psychosis
             Console.WriteLine($"Processing combat action: {input}...");
         }
 
-    }
-
-    public void LevelUp(Player player)
-    {
-        // Example logic for handling player level up
-        player.Level++;
-        player.ExperiencePoints = 0; // Reset experience points
-        player.Health = player.MaxHealth; // Fully heal the player
-        Console.WriteLine($"Congratulations! You are now level {player.Level}.");
-    }
-
-    public void CompleteQuest(Player player, Quest quest)
-    {
-        // Example logic for handling quest completion
-        quest.Status = QuestStatus.Completed;
-        player.ExperiencePoints += quest.ExperienceReward;
-        Console.WriteLine($"Quest '{quest.Name}' completed! You earned {quest.ExperienceReward} experience points.");
-    }
-
-    public void OpenChest(Player player, Chest chest)
-    {
-        // Example logic for handling opening a chest
-        if (chest.IsLocked)
-        {
-            Console.WriteLine("This chest is locked.");
-        }
-        else
-        {
-            foreach (var item in chest.Items)
-            {
-                player.Inventory.Add(item);
-                Console.WriteLine($"Added {item.Name} to your inventory.");
-            }
-            Console.WriteLine("Chest is now empty.");
-        }
-    }
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            try
-            {
-                GameplayLoop gameLoop = new GameplayLoop();
-                gameLoop.Run();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred: {ex.Message}");
-            }
-        }
     }
 
 }
