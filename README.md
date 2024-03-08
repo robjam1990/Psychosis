@@ -2,12 +2,14 @@
 
 RPG-Adventure Survival Game
 
+
 # Project
 
+Version:
 [
-{_1-D=(Text) Visual},
-{_2-D=(X, Y) Visual},
-{_3-D=(X, Y, Z)Visual}
+1-D=0.7.4(Gameplay.Interface{Visual(Text)}.Bugs),
+2-D=0.4.8(Gameplay.Interface{Visual(X, Y)}.Bugs),
+3-D=0.2.1(Gameplay.Interface{Visual(X, Y, Z)}.Bugs)
 ]
 Gametype: 
 	Psychosis_1-D
