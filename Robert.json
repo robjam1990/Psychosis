@@ -1,0 +1,14 @@
+{
+    "Name": "Robert",
+    "Attributes": {
+        "strength": 5,
+        "agility": 4,
+        "intelligence": 3
+    },
+    "Inventory": {},
+    "Quests": {},
+    "Relationships": {},
+    "Level": 3,
+    "Experience": -102,
+    "NextLevelThreshold": 161
+}
