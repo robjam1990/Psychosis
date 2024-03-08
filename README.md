@@ -1,5 +1,47 @@
 # Psychosis
+
 RPG-Adventure Survival Game
+
+# Project
+
+[
+{_1-D=(Text) Visual},
+{_2-D=(X, Y) Visual},
+{_3-D=(X, Y, Z)Visual}
+]
+Gametype: 
+	Psychosis_1-D
+
+Developers:
+	robjam1990
+	ChatGPT
+	pi.ai
+	Twig2048
+
+# Modules
+
+Completed Modules(Associations):
+	Robert: (Growth, Skills, Stats)
+	Combat: (Combatant, Injury)
+	Justice: (Jurisdiction)
+	Management: (Ownership, NPC, NPC_NN, Economy, Logistics, Object, Resource)
+	Intro: (Alek, Create)
+	Ark: (ARk_NN, Mercenary)
+
+Uncompleted Modules:
+	Actions
+	Bractalia
+	Config
+	Ecoystem
+	Genetis
+	Main
+	Nexus
+	Social
+	Survival
+	Thear
+	Taverne
+
+ # Description
 
 In the enthralling world of Psychosis, you find yourself in the heart of Nexus Tavern, situated in the vibrant town of Nexus, Bractalia. As the hum of conversations fills the air, your story begins to unfold, teeming with endless opportunities and adventures.
 You are invited to traverse a meticulously detailed solar system, featuring round planets ripe for exploration. The strategic combat system incorporates a limb removal mechanic, amplifying the depth and intricacy of each encounter.
