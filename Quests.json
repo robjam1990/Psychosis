@@ -1,0 +1,164 @@
+[
+    {
+        "name": "Ark",
+        "location": "Taverne(Main Hall)",
+        "objective": "Speak to Ajax, the Leader of the Hammerhead Mercenaries.",
+        "type": "Faction"
+    },
+    {
+        "name": "Aslo",
+        "location": "Taverne(Main Hall)",
+        "objective": "Help ASLO the Bard remember the lyrics he forgot!",
+        "type": "Side"
+    },
+    {
+        "name": "Maia",
+        "location": "Taverne(Main Hall)",
+        "objective": "Speak with the Barkeep, The head of the establishment 'Ye Olde Taverne'.",
+        "type": "Main"
+    },
+    {
+        "name": "Aithaluwa",
+        "location": "Taverne(Main Hall)",
+        "objective": "Craft any chestpiece for a fellow adventurer.",
+        "type": "Side"
+    },
+    {
+        "name": "Ralph",
+        "location": "Taverne(Main Hall)",
+        "objective": "Harvest Ginger Root.",
+        "type": "Ye Olde Taverne"
+    },
+    {
+        "name": "Ajax",
+        "location": "Mercenary Camp(Leader's Tent)",
+        "objective": "Deliver 5 weapons of good quality or better.",
+        "type": "Faction"
+    },
+    {
+        "name": "Opus",
+        "location": "Temple(Sacred Chamber)",
+        "objective": "Speak with the Apus, The Queen of Bractalia.",
+        "type": "Nation"
+    },
+    {
+        "name": "Apus",
+        "location": "Bractal Castle(Throne Room)",
+        "objective": "Kill the leader of the Bandit Camp.",
+        "type": "Nation"
+    },
+    {
+        "name": "BanditRaid",
+        "location": "Taverne(Main Hall)",
+        "objective": "Defend the tavern from a bandit raid!",
+        "type": "Dynamic Event"
+    },
+    {
+        "name": "EscortMission",
+        "location": "Taverne(Main Hall)",
+        "objective": "Escort a merchant safely to a specified area.",
+        "type": "Dynamic Event"
+    },
+    {
+        "name": "HuntingContest",
+        "location": "Taverne(Main Hall)",
+        "objective": "Participate in the hunting contest.",
+        "type": "Dynamic Event"
+    },
+    {
+        "name": "CombatTournaments",
+        "location": "Longhouse(Archery Range, Arena and Training Grounds)",
+        "objective": "Participate in a combat tourney.",
+        "type": "Dynamic Events"
+    },
+    {
+        "name": "AnimalAttack",
+        "location": "Nexus(Night Time)",
+        "objective": "You are attacked by a wild animal! Defend yourself!",
+        "type": "Dynamic Event"
+    },
+    {
+        "name": "FrameJob",
+        "location": "Marketplace(Rush Hour)",
+        "objective": "You are framed for a crime you didn't commit! The guards are after you!",
+        "type": "Dynamic Event"
+    },
+    {
+        "Bling": "Deliver Blings Things.",
+        "location": "Weavery(Shop)",
+        "objective": "Deliver some supplies to John in the Ruins to the South.",
+        "type": "Side"
+    },
+    {
+        "name": "The Sap of Life",
+        "location": "Temple(Main Chamber)",
+        "objective": "Gather 5 drops of the Sap of Life for the town's Healer.",
+        "type": "Nexus"
+    },
+    {
+        "name": "Lost And Found",
+        "location": "Marketplace(Evening)",
+        "objective": "Help a child find their lost necklace.",
+        "type": "Side"
+    },
+    {
+        "name": "Cave Rumours",
+        "location": "Mount Robson(Peak, Mineshaft)",
+        "objective": "Explore the mysterious cave and discover new resources.",
+        "type": "Side"
+    },
+    {
+        "name": "Trading Goods Caravan",
+        "location": "Marketplace(3 Times a Week)",
+        "objective": "Trade goods with two merchants from different towns.",
+        "type": "Faction"
+    },
+    {
+        "name": "Dragon Rumours",
+        "location": "Mountain Peak(Eagle's Nest)",
+        "objective": "Investigate the rumours of a dragon in the area.",
+        "type": "Trophy Hunting"
+    },
+    {
+        "name": "Ancient Relics",
+        "location": "Ruins (Demolished Blacksmith's Shop)",
+        "objective": "Retrieve the specified artifacts and return them to the Scavenger.",
+        "type": "Side"
+    },
+    {
+        "name": "Famine Relief",
+        "location": "Famine-affected Village",
+        "objective": "Deliver a large quantity of food to the village to help alleviate the famine.",
+        "type": "Nation"
+    },
+    {
+        "name": "Ghostly Haunting",
+        "location": "Ruins (Damaged Shop)",
+        "objective": "Gather evidence, solve puzzles, and confront the source of the haunting.",
+        "type": "Side"
+    },
+    {
+        "name": "Military Intelligence",
+        "location": "Enemy Stronghold (Various Areas)",
+        "objective": "Gather information on enemy movements, resources, and plans without being detected.",
+        "type": "Faction"
+    },
+    {
+        "name": "National Combat Tournament",
+        "location": "Bractal Castle (Inner Courtyard)",
+        "objective": "Participate in a combat tournament to represent your nation and win glory for your faction.",
+        "type": "Nation"
+    },
+    {
+        "name": "Lost Expedition",
+        "location": "Uncharted Wilderness",
+        "objective": "Follow the expedition's trail, overcome obstacles, and rescue any survivors.",
+        "type": "Bractal"
+    },
+    {
+        "name": "Political Slander",
+        "location": "Royal Court (Various Courtrooms and Chambers)",
+        "objective": "Slander a political rival out of office and replace them with a more favorable candidate.",
+        "type": "Nation"
+    }
+]
