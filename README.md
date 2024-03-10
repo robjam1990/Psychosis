@@ -1,43 +1,65 @@
-   ________________________________________________________________________________________________________________
- /__==========================================/\==================================================================__\
-/|Text input:                                 ||Notifications:                                                      |\
-||                                            ||                                                                    ||
-||                                            ||                                                                    ||
-||                                            ||                                                                    ||
-||                                            ||                                                                    ||
-||                                            ||                                                                    ||
-||                                            ||                                                                    ||
-||                                            ||                                                                    ||
-||                                            ||                                                                    ||
-|__===========================================\/==========================================_/======================__/|
-||(M)ovement        (O)bservation      (R)un  /                                           |\_  Character Quests:  _/_|
-||                                           /                                            |_\|\__|__=============__\_|
-||                             __=========__|_____________________________________________|__\_|/|List:             ||
-||                             |Text output:|                                                 \ \|                  ||
-||(C)onversation:              |__========__\                                                  \ |                  ||
-||_____________________________|_____________\__________________________________________________\|                  ||
-|__============================================================================================__|                  ||
-|/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|                  ||
-||Inventory:                                  ||Map(7*8):                                        |                  || 
-||                                            ||                                                 |                  || 
-||                                            ||                                                 |                  || 
-||                                            ||                                                 |                  || 
-||                                            ||                                                 |                  || 
-||                                            ||                                                 |                  || 
-||                                            ||                                                 |                  || 
-||                                            ||                                                 |                  /| 
-||                                            |\                                                 |                 / | 
-||                                            |__\===================/===========================^================/__|
-||                                            ||Character Statistics/                                               ||
-||                                            |__================__/                                                ||
-||                                            ||/                                                                   ||
-||                                            ||                                                                    ||
-||                                            ||                                                                    ||
-||                                            ||                                                                    ||
-||                                            ||                                                                    ||
-|\                                            ||                                                                    /|
-| \                                           /\                                                                   / |
-|__\=========================================/==\=================================================================/__|
+# TUID #
+
+ANSI escape codes for text colors
+
+class Colors:
+    RED = '\033[91m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    BLUE = '\033[94m'
+    MAGENTA = '\033[95m'
+    CYAN = '\033[96m'
+    WHITE = '\033[97m'
+    RESET = '\033[0m'
+
+Your Text GUI code
+
+def display_message(message, color=Colors.RESET):
+    print(color + message + Colors.RESET)
+
+'''
+display_message("   ________________________________________________________________________________________________________________   ", Colors.GREEN)
+display_message(" /__==========================================/\==================================================================__\ ", Colors.GREEN)
+display_message("/|Text input:                                 ||Notifications:                                                      |\", Colors.GREEN)
+display_message("||                                            ||                                                                    ||", Colors.GREEN)
+display_message("||                                            ||                                                                    ||", Colors.GREEN)
+display_message("||                                            ||                                                                    ||", Colors.GREEN)
+display_message("||                                            ||                                                                    ||", Colors.GREEN)
+display_message("||                                            ||                                                                    ||", Colors.GREEN)
+display_message("||                                            ||                                                                    ||", Colors.GREEN)
+display_message("||                                            ||                                                                    ||", Colors.GREEN)
+display_message("||                                            ||                                                                    ||", Colors.GREEN)
+display_message("|__===========================================\/==========================================_/======================__/|", Colors.GREEN)
+display_message("||(M)ovement        (O)bservation      (R)un  /                                           |\_  Character Quests:  _/_|", Colors.GREEN)
+display_message("||                                           /                                            |_\|\__|__=============__\_|", Colors.GREEN)
+display_message("||                             __=========__|_____________________________________________|__\_|/|List:             ||", Colors.GREEN)
+display_message("||                             |Text output:|                                                 \ \|                  ||", Colors.GREEN)
+display_message("||(C)onversation:              |__========__\                                                  \ |                  ||", Colors.GREEN)
+display_message("||_____________________________|_____________\__________________________________________________\|                  ||", Colors.GREEN)
+display_message("|__============================================================================================__|                  ||", Colors.GREEN)
+display_message("|/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|                  ||", Colors.GREEN)
+display_message("||Inventory:                                  ||Map(7*8):                                        |                  ||", Colors.GREEN)
+display_message("||                                            ||                                                 |                  ||", Colors.GREEN)
+display_message("||                                            ||                                                 |                  ||", Colors.GREEN)
+display_message("||                                            ||                                                 |                  ||", Colors.GREEN)
+display_message("||                                            ||                                                 |                  ||", Colors.GREEN)
+display_message("||                                            ||                                                 |                  ||", Colors.GREEN)
+display_message("||                                            ||                                                 |                  ||", Colors.GREEN)
+display_message("||                                            ||                                                 |                  /|", Colors.GREEN)
+display_message("||                                            |\                                                 |                 / |", Colors.GREEN)
+display_message("||                                            |__\===================/===========================^================/__|", Colors.GREEN)
+display_message("||                                            ||Character Statistics/                                               ||", Colors.GREEN)
+display_message("||                                            |__================__/                                                ||", Colors.GREEN)
+display_message("||                                            ||/                                                                   ||", Colors.GREEN)
+display_message("||                                            ||                                                                    ||", Colors.GREEN)
+display_message("||                                            ||                                                                    ||", Colors.GREEN)
+display_message("||                                            ||                                                                    ||", Colors.GREEN)
+display_message("||                                            ||                                                                    ||", Colors.GREEN)
+display_message("|\                                            ||                                                                    /|", Colors.GREEN)
+display_message("| \                                           /\                                                                   / |", Colors.GREEN)
+display_message("|__\=========================================/==\=================================================================/__|", Colors.GREEN)
+'`'
+
 
 ## Psychosis
 
