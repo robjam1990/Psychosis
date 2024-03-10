@@ -1,9 +1,50 @@
-# Psychosis
+   ________________________________________________________________________________________________________________
+ /__==========================================/\==================================================================__\
+/|Text input:                                 ||Notifications:                                                      |\
+||                                            ||                                                                    ||
+||                                            ||                                                                    ||
+||                                            ||                                                                    ||
+||                                            ||                                                                    ||
+||                                            ||                                                                    ||
+||                                            ||                                                                    ||
+||                                            ||                                                                    ||
+||                                            ||                                                                    ||
+|__===========================================\/==========================================_/======================__/|
+||(M)ovement        (O)bservation      (R)un  /                                           |\_  Character Quests:  _/_|
+||                                           /                                            |_\|\__|__=============__\_|
+||                             __=========__|_____________________________________________|__\_|/|List:             ||
+||                             |Text output:|                                                 \ \|                  ||
+||(C)onversation:              |__========__\                                                  \ |                  ||
+||_____________________________|_____________\__________________________________________________\|                  ||
+|__============================================================================================__|                  ||
+|/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|                  ||
+||Inventory:                                  ||Map(7*8):                                        |                  || 
+||                                            ||                                                 |                  || 
+||                                            ||                                                 |                  || 
+||                                            ||                                                 |                  || 
+||                                            ||                                                 |                  || 
+||                                            ||                                                 |                  || 
+||                                            ||                                                 |                  || 
+||                                            ||                                                 |                  /| 
+||                                            |\                                                 |                 / | 
+||                                            |__\===================/===========================^================/__|
+||                                            ||Character Statistics/                                               ||
+||                                            |__================__/                                                ||
+||                                            ||/                                                                   ||
+||                                            ||                                                                    ||
+||                                            ||                                                                    ||
+||                                            ||                                                                    ||
+||                                            ||                                                                    ||
+|\                                            ||                                                                    /|
+| \                                           /\                                                                   / |
+|__\=========================================/==\=================================================================/__|
+
+## Psychosis
 
 RPG-Adventure Survival Game
 
 
-# Project
+## Project
 
 Version:
 [
@@ -20,7 +61,7 @@ Developers:
 	pi.ai
 	Twig2048
 
-# Modules
+## Modules
 
 Completed Modules(Associations):
 	Robert: (Growth, Skills, Stats)
@@ -43,7 +84,7 @@ Uncompleted Modules:
 	Thear
 	Taverne
 
- # Description
+ ## Description
 
 In the enthralling world of Psychosis, you find yourself in the heart of Nexus Tavern, situated in the vibrant town of Nexus, Bractalia. As the hum of conversations fills the air, your story begins to unfold, teeming with endless opportunities and adventures.
 You are invited to traverse a meticulously detailed solar system, featuring round planets ripe for exploration. The strategic combat system incorporates a limb removal mechanic, amplifying the depth and intricacy of each encounter.
