@@ -1,0 +1,4 @@
+C:\Users\Robert\desktop\justice\obj\Debug\net8.0\justice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Robert\desktop\justice\obj\Debug\net8.0\justice.AssemblyInfoInputs.cache
+C:\Users\Robert\desktop\justice\obj\Debug\net8.0\justice.AssemblyInfo.cs
+C:\Users\Robert\desktop\justice\obj\Debug\net8.0\justice.csproj.CoreCompileInputs.cache
