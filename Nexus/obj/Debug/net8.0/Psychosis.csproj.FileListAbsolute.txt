@@ -1,0 +1,14 @@
+C:\Users\Robert\Desktop\Nexus\Nexus\bin\Debug\net8.0\Psychosis.exe
+C:\Users\Robert\Desktop\Nexus\Nexus\bin\Debug\net8.0\Psychosis.deps.json
+C:\Users\Robert\Desktop\Nexus\Nexus\bin\Debug\net8.0\Psychosis.runtimeconfig.json
+C:\Users\Robert\Desktop\Nexus\Nexus\bin\Debug\net8.0\Psychosis.dll
+C:\Users\Robert\Desktop\Nexus\Nexus\bin\Debug\net8.0\Psychosis.pdb
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Psychosis.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Psychosis.AssemblyInfoInputs.cache
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Psychosis.AssemblyInfo.cs
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Psychosis.csproj.CoreCompileInputs.cache
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Psychosis.dll
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\refint\Psychosis.dll
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Psychosis.pdb
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Psychosis.genruntimeconfig.cache
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\ref\Psychosis.dll

@@ -1,0 +1,14 @@
+C:\Users\Robert\Desktop\Nexus\Nexus\bin\Debug\net8.0\Nexus.exe
+C:\Users\Robert\Desktop\Nexus\Nexus\bin\Debug\net8.0\Nexus.deps.json
+C:\Users\Robert\Desktop\Nexus\Nexus\bin\Debug\net8.0\Nexus.runtimeconfig.json
+C:\Users\Robert\Desktop\Nexus\Nexus\bin\Debug\net8.0\Nexus.dll
+C:\Users\Robert\Desktop\Nexus\Nexus\bin\Debug\net8.0\Nexus.pdb
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Nexus.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Nexus.AssemblyInfoInputs.cache
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Nexus.AssemblyInfo.cs
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Nexus.csproj.CoreCompileInputs.cache
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Nexus.dll
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\refint\Nexus.dll
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Nexus.pdb
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\Nexus.genruntimeconfig.cache
+C:\Users\Robert\Desktop\Nexus\Nexus\obj\Debug\net8.0\ref\Nexus.dll
