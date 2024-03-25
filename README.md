@@ -1,66 +1,3 @@
-# TUID #
-
-ANSI escape codes for text colors
-
-class Colors:
-    RED = '\033[91m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    BLUE = '\033[94m'
-    MAGENTA = '\033[95m'
-    CYAN = '\033[96m'
-    WHITE = '\033[97m'
-    RESET = '\033[0m'
-
-Your Text GUI code
-
-def display_message(message, color=Colors.RESET):
-    print(color + message + Colors.RESET)
-
-'''
-display_message("   ________________________________________________________________________________________________________________   ", Colors.GREEN)
-display_message(" /__==========================================/\==================================================================__\ ", Colors.GREEN)
-display_message("/|Text input:                                 ||Notifications:                                                      |\", Colors.GREEN)
-display_message("||                                            ||                                                                    ||", Colors.GREEN)
-display_message("||                                            ||                                                                    ||", Colors.GREEN)
-display_message("||                                            ||                                                                    ||", Colors.GREEN)
-display_message("||                                            ||                                                                    ||", Colors.GREEN)
-display_message("||                                            ||                                                                    ||", Colors.GREEN)
-display_message("||                                            ||                                                                    ||", Colors.GREEN)
-display_message("||                                            ||                                                                    ||", Colors.GREEN)
-display_message("||                                            ||                                                                    ||", Colors.GREEN)
-display_message("|__===========================================\/==========================================_/======================__/|", Colors.GREEN)
-display_message("||(M)ovement        (O)bservation      (R)un  /                                           |\_  Character Quests:  _/_|", Colors.GREEN)
-display_message("||                                           /                                            |_\|\__|__=============__\_|", Colors.GREEN)
-display_message("||                             __=========__|_____________________________________________|__\_|/|List:             ||", Colors.GREEN)
-display_message("||                             |Text output:|                                                 \ \|                  ||", Colors.GREEN)
-display_message("||(C)onversation:              |__========__\                                                  \ |                  ||", Colors.GREEN)
-display_message("||_____________________________|_____________\__________________________________________________\|                  ||", Colors.GREEN)
-display_message("|__============================================================================================__|                  ||", Colors.GREEN)
-display_message("|/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|                  ||", Colors.GREEN)
-display_message("||Inventory:                                  ||Map(7*8):                                        |                  ||", Colors.GREEN)
-display_message("||                                            ||                                                 |                  ||", Colors.GREEN)
-display_message("||                                            ||                                                 |                  ||", Colors.GREEN)
-display_message("||                                            ||                                                 |                  ||", Colors.GREEN)
-display_message("||                                            ||                                                 |                  ||", Colors.GREEN)
-display_message("||                                            ||                                                 |                  ||", Colors.GREEN)
-display_message("||                                            ||                                                 |                  ||", Colors.GREEN)
-display_message("||                                            ||                                                 |                  /|", Colors.GREEN)
-display_message("||                                            |\                                                 |                 / |", Colors.GREEN)
-display_message("||                                            |__\===================/===========================^================/__|", Colors.GREEN)
-display_message("||                                            ||Character Statistics/                                               ||", Colors.GREEN)
-display_message("||                                            |__================__/                                                ||", Colors.GREEN)
-display_message("||                                            ||/                                                                   ||", Colors.GREEN)
-display_message("||                                            ||                                                                    ||", Colors.GREEN)
-display_message("||                                            ||                                                                    ||", Colors.GREEN)
-display_message("||                                            ||                                                                    ||", Colors.GREEN)
-display_message("||                                            ||                                                                    ||", Colors.GREEN)
-display_message("|\                                            ||                                                                    /|", Colors.GREEN)
-display_message("| \                                           /\                                                                   / |", Colors.GREEN)
-display_message("|__\=========================================/==\=================================================================/__|", Colors.GREEN)
-'`'
-
-
 ## Psychosis
 
 RPG-Adventure Survival Game
@@ -70,12 +7,10 @@ RPG-Adventure Survival Game
 
 Version:
 [
-1-D=0.7.4(Gameplay.Interface{Visual(Text)}.Bugs),
-2-D=0.4.8(Gameplay.Interface{Visual(X, Y)}.Bugs),
-3-D=0.2.1(Gameplay.Interface{Visual(X, Y, Z)}.Bugs)
+0.2.1(Gameplay.Interface{Visual(X, Y, Z)}.Bugs)
 ]
 Gametype: 
-	Psychosis_1-D
+	Psychosis
 
 Developers:
 	robjam1990
@@ -85,26 +20,10 @@ Developers:
 
 ## Modules
 
-Completed Modules(Associations):
-	Robert: (Growth, Skills, Stats)
-	Combat: (Combatant, Injury)
-	Justice: (Jurisdiction)
-	Management: (Ownership, NPC, NPC_NN, Economy, Logistics, Object, Resource)
-	Intro: (Alek, Create)
-	Ark: (ARk_NN, Mercenary)
+Completed Modules:
+Psychosis
+Ecosystem
 
-Uncompleted Modules:
-	Actions
-	Bractalia
-	Config
-	Ecoystem
-	Genetis
-	Main
-	Nexus
-	Social
-	Survival
-	Thear
-	Taverne
 
  ## Description
 
