@@ -7,7 +7,7 @@ RPG-Adventure Survival Game
 
 Version:
 [
-0.2.1(Gameplay.Interface{Visual(X, Y, Z)}.Bugs)
+1.2.1(Gameplay.Interface{Visual(X, Y, Z)}.Bugs)
 ]
 Gametype: 
 	Psychosis
