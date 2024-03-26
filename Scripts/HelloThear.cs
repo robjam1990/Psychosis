@@ -45,7 +45,8 @@ namespace YourNamespace
         {
             //Your program starts here...
             WriteLine(@"Hello Thear!!");
-            ReadLine();
+            ReadKey();
+            Clear();
         }
     }
 }
