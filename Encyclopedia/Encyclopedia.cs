@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
@@ -26,11 +27,72 @@ namespace EncyclopediaApp
             Clear();
 
             Title = "Encyclopedia App";
+            
             DisplayIntro();
             CreateEncyclopediaFile();
-            DisplayEncyclopediaContents();
-            AddEntry();
+            RunMenu();
             DisplayOutro();
+            
+        }
+        private void RunMenu()
+        {
+            string choice;
+            do
+            {
+                choice = GetChoice();
+                switch (choice)
+                {
+                    case "1":
+                        DisplayEncyclopediaContents();
+                        break;
+                    case "2":
+                        ClearEncyclopedia();
+                        break;
+                    case "3":
+                        AddEntry();
+                        break;
+                    default:
+                        break;
+                }
+            } while (choice != "4");
+            
+        }
+        private string GetChoice()
+        {
+            bool isChoiceValid = false;
+            string choice = "";
+
+            do
+            {
+                Clear();
+                ForegroundColor = ConsoleColor.Green;
+                WriteLine(TitleArt);
+                ForegroundColor = ConsoleColor.Red;
+                
+                WriteLine("\nWhat would you like to do?");
+                WriteLine(" > 1. Read the Encyclopedia.");
+                WriteLine(" > 2. Clear the Encyclopedia");
+                WriteLine(" > 3. Add to the Encyclopedia");
+                WriteLine(" > 4. Quit.");
+
+                ForegroundColor = ConsoleColor.DarkBlue;
+                choice = ReadLine().Trim();
+                ForegroundColor = ConsoleColor.Black;
+
+                if (choice == "1" || choice == "2" || choice == "3" || choice == "4")
+                {
+                    isChoiceValid = true;
+                }
+                else
+                {
+                    ForegroundColor = ConsoleColor.DarkRed;
+                    WriteLine($"\"{choice}\" is not a valid option.\nPlease select 1 - 4");
+                    WaitForKey();
+                }
+            }while (!isChoiceValid);
+
+            return choice;
+
         }
         private void CreateEncyclopediaFile() 
         {
@@ -73,10 +135,24 @@ namespace EncyclopediaApp
         private void AddEntry() 
         {
             ForegroundColor = ConsoleColor.Black;
-            WriteLine("\nWhat would you like to add?");
+            WriteLine("\nWhat would you like to add? (Type EXIT and press enter to stop.)");
             ForegroundColor = ConsoleColor.DarkBlue;
-            string newLine = ReadLine()!;
-            File.AppendAllText(EncyclopediaFile, $"\nEntry:\n> {newLine}\n");
+
+            string newEntry = "";
+            bool shouldContinue = true;
+            while (shouldContinue)
+            {
+                string line = ReadLine();
+                if (line.ToLower().Trim() == "exit")
+                {
+                    shouldContinue = false;
+                }
+                else
+                {
+                    newEntry += line + "\n";
+                }
+            }
+            File.AppendAllText(EncyclopediaFile, $"\nEntry:\n{newEntry}\n");
             ForegroundColor = ConsoleColor.Black;
             WriteLine("The Encyclopedia has been updated!");
             WaitForKey();
