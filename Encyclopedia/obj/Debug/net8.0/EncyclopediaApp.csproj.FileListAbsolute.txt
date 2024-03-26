@@ -1,0 +1,14 @@
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\bin\Debug\net8.0\EncyclopediaApp.exe
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\bin\Debug\net8.0\EncyclopediaApp.deps.json
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\bin\Debug\net8.0\EncyclopediaApp.runtimeconfig.json
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\bin\Debug\net8.0\EncyclopediaApp.dll
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\bin\Debug\net8.0\EncyclopediaApp.pdb
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\obj\Debug\net8.0\EncyclopediaApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\obj\Debug\net8.0\EncyclopediaApp.AssemblyInfoInputs.cache
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\obj\Debug\net8.0\EncyclopediaApp.AssemblyInfo.cs
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\obj\Debug\net8.0\EncyclopediaApp.csproj.CoreCompileInputs.cache
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\obj\Debug\net8.0\EncyclopediaApp.dll
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\obj\Debug\net8.0\refint\EncyclopediaApp.dll
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\obj\Debug\net8.0\EncyclopediaApp.pdb
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\obj\Debug\net8.0\EncyclopediaApp.genruntimeconfig.cache
+C:\Users\alekr\OneDrive\Desktop\Coding\Encyclopedia\obj\Debug\net8.0\ref\EncyclopediaApp.dll
